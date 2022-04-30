@@ -1,0 +1,67 @@
+@import url(./style.css);
+@import url(./nav.css);
+@import url(./slider.css);
+@import url(./product.css);
+@import url(./SignIn.css);
+@import url(./ManagementUser.css);
+@import url(./footer.css);
+@import url(./global.css);
+/* @import url(./TaskAdmin.css); */
+@import url(./product.css);
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+:root{
+    --color:#0934ad;
+    --color-primary:#848788;
+    --color-secondary: #0A92C3;
+    --color-third:#333333;
+    --bg:#f3f3f3;
+    --btn-color:#0934ad;
+    --spacing:2.4rem;
+}
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.btn{
+    color: #fff;
+    background-color: var(--color-secondary);
+    font-size: 1.4rem;
+    padding: 3px 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s linear;
+    outline: none;
+    border: 1px solid var(--color-secondary);
+}
+.btn:hover{
+    background-color: var(--btn-color);
+    color: #fff;
+    border: 1px solid var(--btn-color);
+}
+.breadcrumb{
+    font-size: 16px;
+    font-weight:400;
+    margin-left:10%;
+    padding: 1rem;
+}
+.breadcrumb>a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bolder;
+}
+.breadcrumb> a:hover{
+    text-decoration: underline;
+}
+
+.btnReturn {
+    width: 66px;
+    height: 36px;
+    background-color: #0A92C3;
+    color: white;
+    border-radius: 4px;
+}

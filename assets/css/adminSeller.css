@@ -1,0 +1,102 @@
+.productsContainer {
+    font-size: 14px;
+}
+
+.productItem {
+    background-color: white;
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 16px;
+}
+
+.productName {
+    text-align: left;
+    overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  margin-left: 16px;
+  width: 70%;
+}
+
+.productImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.productItem__btns {
+    display: flex;
+  margin-left: 16px;
+
+}
+
+.deleteBtn {
+    margin-left: 16px;
+}
+
+.editBtn:hover, .deleteBtn:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.submit.btn {
+    width: 100px;
+    height: 30px;
+}
+
+.turnbackBtn {
+    margin-right: 700px;
+}
+
+.--1,
+.--2,
+.--3,
+.--4,
+.--5,
+.--6{
+    width: 18%;
+}
+
+.btn {
+    margin-top: 8px;
+}
+
+.productQuantity {
+    text-align: left;
+}
+
+table, th, td {
+    border:1px solid #0A92C3;
+    font-size: 16px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+
+.revenueContainer {
+    margin-top: 16px;
+}
+
+.revenue__Heading {
+    font-size: 24px;
+}
+
+#renderSide {
+    min-height: 600px;
+}
+
+.revenueItem {
+    margin-top: 32px;
+}
+
+.order__heading {
+    width: 100%;
+    min-height: 32px;
+}
+
+#ProductManage__SearchInput {
+    min-height: 26px;
+}

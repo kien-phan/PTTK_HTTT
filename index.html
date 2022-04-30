@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mystery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="shortcut icon" href="./assets/img/favicon/favicon.svg" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/a2e771fb2d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
+  <link rel="stylesheet" href="./assets/css/grid.css">
+  <link rel="stylesheet" href="./assets/css/nav.css ">
+  
+</head>
+
+<body>
+  <div class="main">
+    <div class="header">
+        <header>
+          <!-- Header Title Contact -->
+          <div class="header_contact">
+            <ul class="list_contact">
+              <li class="info_contact">
+                <a href="./introduce.html">
+                  <i class="fas fa-home"></i>
+                  <p>Giới thiệu về Mystery</p>
+                </a>
+              </li>
+              <li class="info_contact">
+                <a href="#footer">
+                  <i class="fas fa-headset"></i>
+                  <p>Thông tin liên hệ</p>
+              </a>
+              </li>
+              <li class="info_contact">
+                <i class="fas fa-tv"></i>
+                <p>Tin tức công nghệ</p>
+              </li>
+              <li class="info_contact">
+                <i class="fas fa-tools"></i>
+                <p>Xây dựng cấu hình</p>
+              </li>
+            </ul>
+          </div> 
+          <nav>
+            <!-- Navagation -->
+              <div class="Navbar">           
+                  <a href="./index.html"><img src="./assets/img/logo/Logo_Mystery_Light.svg" alt=""class="Nav_logo"></a>
+                  <div class="dropdown">
+                      <i class="fas fa-bars"></i>
+                      <button class="btn-dropdown"> Danh mục sản phẩm</button>
+                      <div class="dropdown__list">
+                        <a href="#" onclick="viewAllProduct('laptop')">Laptop - Macbook</a>
+                        <a href="#" onclick="viewAllProduct('PC')">PC - Máy tính đồng bộ</a>
+                        <a href="#" onclick="viewAllProduct('Monitor')">Màn hình máy tính</a>
+                        <a href="#" onclick="viewAllProduct('components')">Linh kiện máy tính</a>
+                        <a href="#" onclick="viewAllProduct('Spare-part')">Phụ kiện & thiết bị ngoại vi</a>
+                      </div>
+                  </div>                                              
+                  <div class="Nav_Search">
+                    <div class="Search-wrapper">
+                      <input type="text" placeholder="Nhập từ khóa cần tìm" id="search-input">
+                      <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <ul id="search-box"></ul>
+                  </div>
+                  <div class="Nav_listchoose">
+                    <ul>
+                        <li class="list_item"><a href="./Promotion.html"><i class="fas fa-receipt"></i>Khuyến mãi</a></li>
+                        <li class="list_item login" id="log-and-reg">
+                            <a href="./SignIn.html"><i class="fas fa-user-circle"></i>Đăng nhập</a>
+                        </li>
+                        <li class="list_item account hide" id="user-section">
+                          <ul>
+                            <li class="list_item dropdown-user"><i class="fas fa-bell"></i></i>Thông báo
+                                <div class="alert-user">
+                                    <i class="fas fa-search"></i>
+                                    Hiện tại bạn chưa có thông báo mới
+                                </div>
+                            </li>
+                            <li class="list_item dropdown-user">
+                                <i class="fas fa-user-circle"></i><p class="username"></p>
+                                <div class="dropdown-user__list">
+                                  <a href="./Management.html">Thông tin tài khoản</a>
+                                  <a href="./Order.html">Quản lý đơn hàng</a>
+                                  <a href="./EditAccount.html">Thay đổi tài khoản</a>
+                                  <a href="" id="logout-btn"><button class="btn">Đăng xuất</button></a>
+                                </div>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="list_item "><a href="./Cart.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <div class="">Giỏ hàng</div></a>
+                        </li>
+                    </ul>
+                  </div>
+              </div>
+              <div id="Navbar">           
+                <a href="./index.html"><img src="./assets/img/logo/Logo_Mystery_Light.svg" alt=""class="Nav_logo"></a>
+                <div class="dropdown">
+                    <i class="fas fa-bars"></i>
+                    <button class="btn-dropdown"> Danh mục sản phẩm</button>
+                    <div class="dropdown__list">
+                      <a href="#" onclick="viewAllProduct('laptop')">Laptop - Macbook</a>
+                      <a href="#" onclick="viewAllProduct('PC')">PC - Máy tính đồng bộ</a>
+                      <a href="#" onclick="viewAllProduct('Monitor')">Màn hình máy tính</a>
+                      <a href="#" onclick="viewAllProduct('components')">Linh kiện máy tính</a>
+                      <a href="#" onclick="viewAllProduct('Spare-part')">Phụ kiện & thiết bị ngoại vi</a>
+                    </div>
+                </div>                                              
+                <div class="Nav_Search">
+                  <div class="Search-wrapper">
+                    <input type="text" placeholder="Nhập từ khóa cần tìm" id="search-input1">
+                    <button id="search-btn1"><i class="fas fa-search"></i></button>
+                  </div>
+                  <ul id="search-box1"></ul>
+                </div>
+                <div class="Nav_listchoose">
+                  <ul>
+                      <li class="list_item"><a href="./Promotion.html"><i class="fas fa-receipt"></i>Khuyến mãi</a></li>
+                      <li class="list_item login" id="log-and-reg1">
+                          <a href="./SignIn.html"><i class="fas fa-user-circle"></i>Đăng nhập</a>
+                      </li>
+                      <li class="list_item account hide" id="user-section1">
+                        <ul>
+                          <li class="list_item dropdown-user"><i class="fas fa-bell"></i></i>Thông báo
+                              <div class="alert-user">
+                                  <i class="fas fa-search"></i>
+                                  Hiện tại bạn chưa có thông báo mới
+                              </div>
+                          </li>
+                          <li class="list_item dropdown-user">
+                              <i class="fas fa-user-circle"></i><p class="username1"></p>
+                              <div class="dropdown-user__list">
+                                  <a href="./Management.html">Thông tin tài khoản</a>
+                                  <a href="./Order.html">Quản lý đơn hàng</a>
+                                  <a href="./EditAccount.html">Thay đổi tài khoản</a>
+                                  <a href="" id="logout-btn"><button class="btn">Đăng xuất</button></a>
+                              </div>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="list_item "><a href="./Cart.html">
+                          <i class="fas fa-shopping-cart"></i>
+                          <div class="">Giỏ hàng</div></a>
+                      </li>
+                  </ul>
+                </div>
+              </div> 
+            </nav>
+          <div class="interactive-active">
+              <div class="active-socials">
+                  <div class="active-social tel">
+                      <i class="fas fa-phone"></i>
+                  </div>
+                  <div class="active-social email">
+                      <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="active-social address"><i class="fas fa-map-marker-alt "></i></div>
+                  <div class="active-social face"><i class="fab fa-facebook-f "></i></div>
+              </div>
+              <div id="backToTop">
+                <a href="#"><i class="fas fa-arrow-up"></i></a>
+              </div>
+              <div class="active-chat">
+                <i class="fas fa-comment-alt"></i>
+                <p>Chat mua hàng trực tuyến từ 8h - 24h</p>
+              </div>
+  
+              <div class="active-alert">
+                
+              </div>
+          </div>
+        </header>
+    </div>
+    <section class="container_main">
+      <!-- slider -->
+        <div class="slider">
+          <div class="swiper mySwiper slider_animation">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="./assets/img/banner/Banner_Mystery.jpg" class="slider_img" alt=""></div>
+              <div class="swiper-slide"><img src="./assets/img/banner/Banner_Noel.jpg" class="slider_img" alt=""></div>
+              <div class="swiper-slide"><img src="./assets/img/banner/Banner_Tet.jpg" class="slider_img" alt=""></div>
+              <div class="swiper-slide"><img src="./assets/img/banner/Banner_Noel.jpg" class="slider_img" alt=""></div>
+              <div class="swiper-slide"><img src="./assets/img/banner/Banner_Tet.jpg" class="slider_img" alt=""></div>
+            </div>
+            <div class="swiper-pagination dots"></div>
+          </div>
+        </div> <!-- sidebar -->
+        <!-- <div class="sidebar">
+          <a href="#" onclick="viewAllProduct('laptop')">Laptop - Macbook</a>
+          <a href="#" onclick="viewAllProduct('PC')">PC - Máy tính đồng bộ</a>
+          <a href="#" onclick="viewAllProduct('Monitor')">Màn hình máy tính</a>
+          <a href="#" onclick="viewAllProduct('components')">Linh kiện máy tính</a>
+          <a href="#" onclick="viewAllProduct('Spare-part')">Phụ kiện & thiết bị ngoại vi</a>
+        </div> -->
+        <!-- <div class="other-content_wrapper">
+          <div class="other-content">
+            <a href="#">
+              <img src="./assets/img/Something/other-content_bg1.jpg" alt="">
+              <p class="other-content_heading">Tin công nghệ</p>
+            </a>
+          </div>
+          <div class="other-content">
+            <a href="#">
+              <img src="./assets/img/Something/other-content_bg2.jpg" alt="">
+              <p class="other-content_heading">Build PC</p>
+            </a>
+          </div>
+        </div> -->
+    </section>
+    <section class="show-product-wapper">
+        <div class="famous-brand">
+          <h3>Thương hiệu nổi bật</h3>
+          <div class="trademarks">
+            <div onclick="viewAllProductProducer('Asus')" class="trademark">
+              <img src="./assets/img/banner/banner-asus.jpg" alt="">
+              <h4>asus</h4>
+            </div>
+            <div onclick="viewAllProductProducer('HP')" class="trademark">
+              <img src="./assets/img/Something/hp-demo.jpg" alt="">
+              <h4>hp</h4>
+            </div>
+            <div class="trademark" onclick="viewAllProductProducer('Lenovo')">
+              <img src="./assets/img/banner/banner-lenovo.jpg" alt="">
+              <h4>lenovo</h4>
+            </div>
+            <div class="trademark" onclick="viewAllProductProducer('MSI')">
+              <img src="./assets/img/Something/msi-demo.png" alt="">
+              <h4>msi</h4>
+            </div>
+          </div>
+        </div>
+        <div class="product-categories">
+          <div class="product-category">
+            <div class="type-heading">
+              <h3>Laptop Gaming - Laptop Văn Phòng</h3>
+              <span>Xem tất cả <i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="type-show">
+              <div class="type-item">
+                <h4>MSI Gaming</h4>
+                <p>Sức mạnh từ nhà rồng</p>
+                <img src="./assets/img/Something/msi-demo.png" alt="">
+              </div>
+              <div class="type-item">
+                <h4>Lễ hội Hp</h4>
+                <p>Siêu khuyến mãi</p>
+                <img src="./assets/img/Something/hp-demo.jpg" alt="">
+              </div>
+              <div class="type-item">
+                <h4>Người đồng hành Asus</h4>
+                <p>Vừa túi tiền sinh viên</p>
+                <img src="./assets/img/Something/asus-demo.jpg" alt="">
+              </div>
+              <div class="type-item">
+                <h4>Lenovo</h4>
+                <p>Dành cho doanh nhân</p>
+                <img src="./assets/img/Something/lenovo-demo.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="product-category">
+            <div class="type-heading">
+              <h3>PC - Màn hình - link kiện máy tính</h3>
+              <span>Xem tất cả <i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="type-show">
+              <div class="type-item">
+                <h4>Mystery PC</h4>
+                <p>Làm việc chuẩn mực</p>
+                <img src="./assets/img/Something/PcCase-demo.jpg" alt="">
+              </div>
+              <div class="type-item">
+                <h4>SSD</h4>
+                <p>Load manh trong tích tắc</p>
+                <img src="./assets/img/Something/ssd-demo.png" alt="">
+              </div>
+              <div class="type-item">
+                <h4>Màn hình Gaming</h4>
+                <p>Giảm tới 50%</p>
+                <img src="./assets/img/Something/Monitor-demo.png" alt="">
+              </div>
+              <div class="type-item">
+                <h4>RTX 30 Series</h4>
+                <p>Hiệu năng vượt bậc</p>
+                <img src="./assets/img/Something/RTX-demo.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner-show">
+          <img src="./assets/img/banner/Banner_Noel.jpg" alt="" srcset="" width="100%">
+        </div>
+        <div class="best-seller">
+          <div class="seller-detail">
+            <h3>Hàng bán chạy trong tháng</h3>
+            <span>Xem tất cả <i class="fas fa-chevron-right"></i></span>
+        </div>
+        <div class="seller-wrapper">
+          <div class="seller-list">
+            <div class="seller-item">
+              <img src="./assets/img/Product/2_MSI_MAG271C.jpeg" alt="">
+              <div class="seller-product-info">
+                <div class="name-seller-product">
+                  <p>Màn hình MSI Optix G27CQ4 (27inch/QHD/VA/165Hz/1ms/250nits/HDMI+DP+Audio/Cong)</p></div>
+                <div class="price-seller-product">
+                  <div class="old-price-seller">
+                    <div class="old-price">7.999.000 &#8363;</div>
+                    <div class="sell-price">( Tiết kiệm 19%)</div>
+                  </div>
+                  <div class="new-price-seller">6.500.000 &#8363;</div>
+                </div>
+              </div>
+              <a href="#" onclick="viewAllProduct('Monitor')"><button class="btn btn-seller">Mua hàng ngay</button></a>
+            </div>
+            <div class="seller-item">
+              <img src="./assets/img/laptop/151_Asus UX363EA-HP532T.png" alt="">
+              <div class="seller-product-info">
+                <div class="name-seller-product">Laptop Asus ZenBook UX363EA-HP532T (i5 1135G7/8GB RAM/512GB SSD/13.3 FHD Cảm ứng/Win10/Cáp/Bút/Túi/Xám)</div>
+                <div class="price-seller-product">
+                  <div class="old-price-seller">
+                    <div class="old-price">27.999.000 &#8363;</div>
+                    <div class="sell-price">( Tiết kiệm 4%)</div>
+                  </div>
+                  <div class="new-price-seller">26.999.000 &#8363;</div>
+                </div>
+              </div>
+              <a href="#" onclick="viewAllProduct('laptop')"><button class="btn btn-seller">Mua hàng ngay</button></a>
+            </div>
+            <div class="seller-item">
+              <img src="./assets/img/c_components/51_ Asus ROG Ti-O12G-GAMING.png" alt="">
+              <div class="seller-product-info">
+                <div class="name-seller-product">Card màn hình Asus ROG STRIX-RTX 3080 Ti-O12G-GAMING</div>
+                <div class="price-seller-product">
+                  <div class="old-price-seller">
+                    <div class="old-price">51.509.000 &#8363;</div>
+                    <div class="sell-price">( Tiết kiệm 7%)</div>
+                  </div>
+                  <div class="new-price-seller">47.999.000 &#8363;</div>
+                </div>
+              </div>
+              <a href="#" onclick="viewAllProduct('components')" ><button class="btn btn-seller">Mua hàng ngay</button></a>
+            </div>
+            <div class="seller-item">
+              <img src="./assets/img/PC/201_Lenovo-IdeaCentre-510-15ICB.png" alt="">
+              <div class="seller-product-info">
+                <div class="name-seller-product">PC Lenovo IdeaCentre 510-15ICB (i3 8100/4GB RAM/1TB</div>
+                <div class="price-seller-product">
+                  <div class="old-price-seller">
+                    <div class="old-price">9.699.000 &#8363;</div>
+                    <div class="sell-price">( Tiết kiệm 12%)</div>
+                  </div>
+                  <div class="new-price-seller ">8.499.000 &#8363;</div>
+                </div>
+              </div>
+              <a href="#" onclick="viewAllProduct('PC')"><button class="btn btn-seller">Mua hàng ngay</button></a>
+            </div>
+            <div class="seller-item">
+              <img src="./assets/img/spare_parts/101_Zidli ZH20 7.1.png" alt="">
+              <div class="seller-product-info">
+                <div class="name-seller-product">Tai nghe Zidli ZH20 7.1 Led RGB USB</div>
+                <div class="price-seller-product">
+                  <div class="old-price-seller">
+                    <div class="old-price">809.000 &#8363;</div>
+                    <div class="sell-price">( Tiết kiệm 38%)</div>
+                  </div>
+                  <div class="new-price-seller">499.000 &#8363;</div>
+                </div>
+              </div>
+              <a href="#" onclick="viewAllProduct('Spare-part')" ><button class="btn btn-seller">Mua hàng ngay</button></a>
+            </div>
+        </div>
+      </div>
+      </div>
+      <div class="banner-show">
+        <img src="./assets/img/banner/Banner_Tet.jpg" alt="" srcset="" width="100%">
+      </div>
+    </section>
+    <section class = "product-content">
+      <div class="product-index">
+        <div class="container">
+          <div class="product__header">
+            <h2 class="heading ">Dành cho bạn</h2>
+            <!-- <div class="btn__list">
+              <button class="btn" id="view-all-btn" onclick="viewAllProduct('laptop')">Xem tất cả sản phẩm</button>
+            </div> -->
+          </div>
+        </div>
+        <div id="data-container__all">
+          <div class="grid wide data_all">
+            <!-- <div class="row ">
+
+            </div> -->
+          </div>
+        </div>
+        <div id="pagination__all" class="pagination"></div>
+      </div> 
+    </section>
+    <!-- <section class = "product-content">
+      <div class="product-index">
+        <div class="container">
+          <div class="product__header">
+            <h2 class="heading ">Case PC</h2>
+            <div class="btn__list">
+              <button class="btn" id="view-all-btn"  onclick="viewAllProduct('PC')">Xem tất cả sản phẩm</button>
+            </div>
+          </div>
+        </div>
+        <div id="data-container__PC"></div>
+        <div id="pagination__PC" class="pagination"></div>
+      </div>
+    </section>
+    <section class = "product-content">
+      <div class="product-index">
+        <div class="container">
+          <div class="product__header">
+            <h2 class="heading ">Phụ kiện & thiết bị ngoại vi</h2>
+            <div class="btn__list">
+              <button class="btn" id="view-all-btn"  onclick="viewAllProduct('Spare-part')">Xem tất cả sản phẩm</button>
+            </div>
+          </div>
+        </div>
+        <div id="data-container__Spare-part"></div>
+        <div id="pagination__Spare-part" class="pagination"></div>
+      </div>
+    </section>
+    <section class = "product-content">
+      <div class="product-index">
+        <div class="container">
+          <div class="product__header">
+            <h2 class="heading ">Linh kiện máy tính</h2>
+            <div class="btn__list">
+              <button class="btn" id="view-all-btn"  onclick="viewAllProduct('components')">Xem tất cả sản phẩm</button>
+            </div>
+          </div>
+        </div>
+        <div id="data-container__components"></div>
+        <div id="pagination__components" class="pagination"></div>
+      </div>
+    </section>
+    <section class ="product-content">
+      <div class="product-index">
+        <div class="container">
+          <div class="product__header">
+            <h2 class="heading">Màn hình máy tính</h2>
+            <div class="btn__list">
+              <button class="btn btn-all" id="view-all-btn"  onclick="viewAllProduct('Monitor')">Xem tất cả sản phẩm</button>
+            </div>
+          </div>
+        </div>
+        <div id="data-container__Monitor"></div>
+        <div id="pagination__Monitor" class="pagination"></div>
+      </div>
+    </section> -->
+    <footer id="footer">
+        <div class="footer-wrapper">
+            <div class="top-service">
+                <div class="service-list">
+                    <div class="service">
+                        <i class="fas fa-truck"></i>
+                        <div class="service-detail">
+                            <h3>Chính sách giao hàng</h3>
+                            <p>Nhận hàng và thanh toán tại nhà</p>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-people-carry"></i>
+                        <div class="service-detail">
+                            <h3>Đổi trả dễ dàng</h3>
+                            <p>1 đổi 1 trong 15 ngày</p>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <i class="far fa-credit-card"></i>
+                        <div class="service-detail">
+                            <h3>Thanh toán tiện lợi</h3>
+                            <p>Trả tiền mặt, trả góp 0%</p>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <i class="far fa-comments"></i>
+                        <div class="service-detail">
+                            <h3>Hỗ trợ nhiệt tình </h3>
+                            <p>Tư vấn, giải đáp mọi thắc mắc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="information-contact">
+                <div class="contact">
+                    <div class="contact-heading">Thông tin Mystery</div>
+                    <span></span>
+                    <div class="contact-list">
+                        <div class="contact-list__content">Giới thiệu</div>
+                        <div class="contact-list__content">Thông tin liên hệ</div>
+                        <div class="contact-list__content">Thông tin tuyển dụng</div>
+                        <div class="contact-list__content">Tin tức</div>
+                        <div class="contact-list__content">Cộng đồng Mystery</div>
+                        <div class="contact-social">
+                            <i class="fab fa-facebook-square"></i>
+                            <i class="fab fa-youtube"></i>
+                            <i class="fab fa-instagram-square"></i>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="contact-heading">Phương thức thanh toán</div>
+                    <span></span>
+                    <div class="contact-list">
+                        <div class="contact-list__content contact-payment">
+                            <i class="far fa-credit-card "></i>
+                            <p>Internet Banking</p>
+                        </div>
+                        <div class="contact-list__content contact-payment">
+                            <i class="far fa-clock"></i>
+                            <p>Trả góp</p>
+                        </div>
+                        <div class="contact-list__content contact-payment">
+                            <i class="fas fa-money-bill-alt "></i>
+                            <p>Tiền mặt</p>
+                        </div>
+                        <div class="contact-list__content contact-payment">
+                            <i class="fas fa-qrcode"></i>
+                            <p>QR code</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="contact-heading">Email liên hệ</div>
+                    <span></span>
+                    <div class="contact-list">
+                        <div class="contact-list__content">
+                            <p>Hỗ trợ khách hàng</p>
+                            <a href="">cskh@mystery.vn</a>
+                        </div>
+                        <div class="contact-list__content">
+                            <p>Liên hệ báo giá</p>
+                            <a href="">baogia@mystery.vn</a>
+                        </div>
+                        <div class="contact-list__content">
+                            <p>Hợp tác phát triển</p>
+                            <a href="">hoptac@mystery.vn</a>
+                        </div>
+                        <div class="contact-list__content">
+                            <p>Tuyen dung nhân viên</p>
+                            <a href="">tuyendung@mystery.vn</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="contact-heading">Hỗ trợ khách hàng</div>
+                    <span></span>
+                    <div class="contact-list">
+                        <div class="contact-list__content">Hướng dẫn mua hàng trực tuyến</div>
+                        <div class="contact-list__content">Hướng dẫn thanh toán</div>
+                        <div class="contact-list__content">Hướng dẫn mua hàng trả góp</div>
+                        <div class="contact-list__content">Gửi yêu cầu bảo hàng</div>
+                        <div class="contact-list__content">Góp ý, khiếu nại</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-detail">
+            <div class="investor-wrapper">
+                <div class="investor-heading">Các nhà đầu tư</div>
+                <div class="investors">
+                    <div class="investor">
+                        <img src="./assets/img/logo/phonvu-logo.jpg" alt="" >
+                    </div>
+                    <div class="investor">
+                        <img src="./assets/img/logo/hanoicomputer-logo.jpg" alt="" >
+                    </div>
+                </div>
+            </div>
+            <div class="mystery-address">
+                <p>© 2021 Công Ty Cổ Phần Thương Mại - Dịch Vụ Mystery</p>
+                <p>Trụ sở chính: Tầng 5, Số 117-119-121 Nguyễn Du, Phường Bến Thành, Quận 1, Thành Phố Hồ Chí Minh </p>
+                <p>Cơ sở hai: Tầng 11 Minh Long Tower, số 17 Bà Huyện Thanh Quan, Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh</p>
+                <p>Email: info@mystery.com. Điện thoại: 1900 9999</p>
+            </div>
+        </div>
+    </footer>
+  </div>
+  <script src="./assets/js/product.js"></script>
+  <script src="./assets/js/index.js"></script>
+  <script src="./assets/js/Nav.js"></script>
+  <script src="./assets/js/nav-onscroll.js"></script>
+  <script src="./assets/js/search.js"></script>
+  <script src="./assets/js/renderProduct.js"></script>
+  <script src="./assets/js/load.js"></script>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      effect: "fade",
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+    });
+  </script>
+
+<script>
+  let products = JSON.parse(localStorage.getItem('products'));
+  renderProduct(products);
+  // const ascendingBtn = document.getElementById('ascending');
+  // const descendingBtn = document.getElementById('descending');
+  // ascendingBtn.addEventListener('click', () => {
+  //   products.sort((a, b) => a.price - b.price);
+  //   renderProduct(products);
+  // })
+  // descendingBtn.addEventListener('click', () => {
+  //   products.sort((a, b) => b.price - a.price);
+  //   renderProduct(products);
+  // })
+  function renderProduct(products) {
+      if (products) {
+          $( () => {
+              let container = $('#pagination__all');
+              container.pagination({
+                  dataSource: [
+                      ...products,
+                  ],
+                  pageSize: 10,
+                  callback: function (data, pagination) {
+                      var dataHtml = '<div class="product-cards row">';
+                      $.each(data, function (index, product) {
+                          dataHtml += `
+                          <div class="product-card col l-2 m-4 c-6">
+                              <a href="#" onClick="viewProduct('${product.id}')" class="product-item" >
+                                  <div class="card-image">
+                                  <img src="${product.image}" alt="">
+                                  </div>
+                                  <div class="card-title" title="${product.title}">${product.title}</div>
+                                  <div class="card-content">
+                                      <div class="money-old-detail">
+                                          <div class="card-money-old">
+                                          ${formatPrice(product.price)}
+                                          </div>
+                                          <div class="card-sale-off">
+                                              (Tiết kiệm ${product.sale_off}%)
+                                          </div>
+                                      </div>
+                                      <div class="card-money-new">
+                                          <h2>${formatPrice(product.price)}</h2>
+                                      </div>
+                                      <div class="card-warehouse">
+                                          <div class="card-icon">
+                                              <i class="fas fa-shopping-bag"></i>
+                                              <p>Còn hàng</p>
+                                          </div>
+                                      </div>
+                                  </div> 
+                              </a>
+                          </div>
+                          `;
+                      });
+                      dataHtml += '</div>';
+                      $(".data_all").html(dataHtml);
+                  }
+              })
+          })
+      }
+  }
+</script>
+</body>
+</html>
+      

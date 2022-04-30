@@ -1,0 +1,186 @@
+.body {
+    min-height: 700px;
+}
+.accountManage {
+    width: 100%;
+    padding: 8px;
+}
+
+.accountManage__switchBtns {
+    width: 100%;
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-radius: 8px;
+}
+
+.accountManage__switchBtns span {
+    font-size: 16px;
+}
+
+.accountManage__switchBtns div {
+    width: 50%;
+    text-align: center;
+}
+
+/* .adminManage_btn {
+    position: relative;
+} */
+/* 
+.adminManage_btn::before {
+    content: "";
+  position: absolute;
+  bottom: 0px;
+  top: 0;
+  right: -5px;
+  width: 2px;
+  height: 150%;
+  background-color: black;
+} */
+
+.accountManage__btn--active {
+    border-bottom: 4px solid #0A92C3;
+}
+
+.adminManage_btn, .userManage_btn {
+    cursor: pointer;
+}
+
+.adminManage_btn:hover, .userManage_btn:hover {
+    opacity: 0.5;
+}
+
+.accountManage__body {
+    width: 100%;
+    background-color: white ;
+    margin-top: 16px;
+}
+
+.accountManage__body-item {
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.accountManage__body-item:nth-child(n) {
+    border-top: 1px solid #0A92C3;
+}
+
+.accountIcon {
+    font-size: 20px;
+}
+
+.accountName {
+    text-align: center;
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    margin-left: 10px;
+}
+
+.buttonItem {
+    background-color: #0A92C3;
+    color: white;
+    padding: 8px;
+    margin-right: 16px;
+    border: none;
+    font-size: 14px;
+}
+
+.buttonItem:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.buttonItemBBlock {
+}
+
+.accountManage__buttonList {
+    display: flex;
+    position: relative;
+}
+
+.buttonItem__setRole {
+}
+
+.subBtns {
+    position: absolute;
+    bottom: -76px;
+    right: 0;
+    display: none;
+    justify-content: center;
+    background-color: white;
+    padding: 16px;
+    box-shadow: 0px 1px 3.12rem 0px rgb(0 0 0 / 50%);
+    z-index: 1;
+}
+
+.subBtns::before {
+    content: "";
+  position: absolute;
+  right: 144px;
+  top: -14px;
+  border-bottom: 20px solid rgb(255, 255, 255);
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+}
+
+.buttonItem__setRole::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    bottom: -14px;
+    left: 0;
+    background-color: transparent;
+}
+
+.subBtns::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    bottom: 52px;
+    left: 108px;
+    background-color: transparent;
+}
+
+.buttonItem__setRole:hover ~ .subBtns {
+    display: flex;
+}
+
+.subBtns:hover {
+    display: flex;
+}
+
+.buttonItem--active {
+    background-color: red !important;
+}
+
+table, th, td {
+    border:2px solid #0A92C3;
+    font-size: 16px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+
+.revenueContainer {
+    margin-top: 16px;
+}
+
+.revenue__Heading {
+    font-size: 24px;
+}
+
+#renderSide {
+    min-height: 600px;
+}
+
+.revenueItem {
+    margin-top: 32px;
+}
+

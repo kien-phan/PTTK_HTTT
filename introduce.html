@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mystery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="shortcut icon" href="./assets/img/favicon/favicon.svg" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/a2e771fb2d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div class="main">
+        <div class="header">
+          <header>
+            <!-- Header Title Contact -->
+            <div class="header_contact">
+              <ul class="list_contact">
+                <li class="info_contact">
+                    <a href="./introduce.html">
+                      <i class="fas fa-home"></i>
+                      <p>Giới thiệu về Mystery</p>
+                    </a>
+                  </li>
+                <li class="info_contact">
+                    <a href="#footer">
+                        <i class="fas fa-headset"></i>
+                        <p>Thông tin liên hệ</p>
+                    </a>
+                </li>
+                <li class="info_contact">
+                  <i class="fas fa-tv"></i>
+                  <p>Tin tức công nghệ</p>
+                </li>
+                <li class="info_contact">
+                  <i class="fas fa-tools"></i>
+                  <p>Xây dựng cấu hình</p>
+                </li>
+              </ul>
+            </div> 
+            <nav>
+                <!-- Navagation -->
+                  <div class="Navbar">           
+                      <a href="./index.html"><img src="./assets/img/logo/Logo_Mystery_Light.svg" alt=""class="Nav_logo"></a>
+                      <div class="dropdown">
+                          <i class="fas fa-bars"></i>
+                          <button class="btn-dropdown"> Danh mục sản phẩm</button>
+                          <div class="dropdown__list">
+                            <a href="#" onclick="viewAllProduct('laptop')">Laptop - Macbook</a>
+                            <a href="#" onclick="viewAllProduct('PC')">PC - Máy tính đồng bộ</a>
+                            <a href="#" onclick="viewAllProduct('Monitor')">Màn hình máy tính</a>
+                            <a href="#" onclick="viewAllProduct('components')">Linh kiện máy tính</a>
+                            <a href="#" onclick="viewAllProduct('Spare-part')">Phụ kiện & thiết bị ngoại vi</a>
+                          </div>
+                      </div>                                              
+                      <div class="Nav_Search">
+                        <div class="Search-wrapper">
+                          <input type="text" placeholder="Nhập từ khóa cần tìm" id="search-input">
+                          <button id="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                        <ul id="search-box"></ul>
+                      </div>
+                      <div class="Nav_listchoose">
+                        <ul>
+                            <li class="list_item"><a href="./Promotion.html"><i class="fas fa-receipt"></i>Khuyến mãi</a></li>
+                            <li class="list_item login" id="log-and-reg">
+                                <a href="./SignIn.html"><i class="fas fa-user-circle"></i>Đăng nhập</a>
+                            </li>
+                            <li class="list_item account hide" id="user-section">
+                              <ul>
+                                <li class="list_item dropdown-user"><i class="fas fa-bell"></i></i>Thông báo
+                                    <div class="alert-user">
+                                        <i class="fas fa-search"></i>
+                                        Hiện tại bạn chưa có thông báo mới
+                                    </div>
+                                </li>
+                                <li class="list_item dropdown-user">
+                                    <i class="fas fa-user-circle"></i><p class="username"></p>
+                                    <div class="dropdown-user__list">
+                                      <a href="./Management.html">Thông tin tài khoản</a>
+                                      <a href="./Order.html">Quản lý đơn hàng</a>
+                                      <a href="./EditAccount.html">Thay đổi tài khoản</a>
+                                      <a href="" id="logout-btn"><button class="btn">Đăng xuất</button></a>
+                                    </div>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="list_item "><a href="./Cart.html">
+                                <i class="fas fa-shopping-cart"></i>
+                                <div class="">Giỏ hàng</div></a>
+                            </li>
+                        </ul>
+                      </div>
+                  </div>
+                  <div id="Navbar">           
+                    <a href="./index.html"><img src="./assets/img/logo/Logo_Mystery_Light.svg" alt=""class="Nav_logo"></a>
+                    <div class="dropdown">
+                        <i class="fas fa-bars"></i>
+                        <button class="btn-dropdown"> Danh mục sản phẩm</button>
+                        <div class="dropdown__list">
+                          <a href="#" onclick="viewAllProduct('laptop')">Laptop - Macbook</a>
+                          <a href="#" onclick="viewAllProduct('PC')">PC - Máy tính đồng bộ</a>
+                          <a href="#" onclick="viewAllProduct('Monitor')">Màn hình máy tính</a>
+                          <a href="#" onclick="viewAllProduct('components')">Linh kiện máy tính</a>
+                          <a href="#" onclick="viewAllProduct('Spare-part')">Phụ kiện & thiết bị ngoại vi</a>
+                        </div>
+                    </div>                                              
+                    <div class="Nav_Search">
+                      <div class="Search-wrapper">
+                        <input type="text" placeholder="Nhập từ khóa cần tìm" id="search-input1">
+                        <button id="search-btn1"><i class="fas fa-search"></i></button>
+                      </div>
+                      <ul id="search-box1"></ul>
+                    </div>
+                    <div class="Nav_listchoose">
+                      <ul>
+                          <li class="list_item"><a href="./Promotion.html"><i class="fas fa-receipt"></i>Khuyến mãi</a></li>
+                          <li class="list_item login" id="log-and-reg1">
+                              <a href="./SignIn.html"><i class="fas fa-user-circle"></i>Đăng nhập</a>
+                          </li>
+                          <li class="list_item account hide" id="user-section1">
+                            <ul>
+                              <li class="list_item dropdown-user"><i class="fas fa-bell"></i></i>Thông báo
+                                  <div class="alert-user">
+                                      <i class="fas fa-search"></i>
+                                      Hiện tại bạn chưa có thông báo mới
+                                  </div>
+                              </li>
+                              <li class="list_item dropdown-user">
+                                  <i class="fas fa-user-circle"></i><p class="username1"></p>
+                                  <div class="dropdown-user__list">
+                                      <a href="./Management.html">Thông tin tài khoản</a>
+                                      <a href="./Order.html">Quản lý đơn hàng</a>
+                                      <a href="./EditAccount.html">Thay đổi tài khoản</a>
+                                      <a href="" id="logout-btn"><button class="btn">Đăng xuất</button></a>
+                                  </div>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="list_item "><a href="./Cart.html">
+                              <i class="fas fa-shopping-cart"></i>
+                              <div class="">Giỏ hàng</div></a>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+            <div class="interactive-active">
+                <div class="active-socials">
+                    <div class="active-social tel">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="active-social email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="active-social address"><i class="fas fa-map-marker-alt "></i></div>
+                    <div class="active-social face"><i class="fab fa-facebook-f "></i></div>
+                </div>
+                <div id="backToTop">
+                  <a href="#"><i class="fas fa-arrow-up"></i></a>
+                </div>
+                <div class="active-chat">
+                  <i class="fas fa-comment-alt"></i>
+                  <p>Chat mua hàng trực tuyến từ 8h - 24h</p>
+                </div>
+    
+                <div class="active-alert">
+                  
+                </div>
+            </div>
+          </header>
+        </div>
+        <section class="body">
+            <div class="breadcrumb">
+                <a href="./index.html">Trang chủ</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="#">Giới thiệu</a>
+            </div>
+            <div class="introduce-container">
+                <div class="introduce-heading">
+                    <h3 class="heading">Giới thiệu về Mystery</h3>
+                    <img src="./assets/img/logo/Logo_Mystery_Light.svg" alt="">
+                </div>
+                <div class="introduce-wrapper">
+                    <div class="general-wrapper introduce-part">
+                        <div class="general-heading">1. Giới thiệu chung</div>
+                        <div class="general-detail">
+                            <p><span>Công Ty Cổ Phần Đầu Tư Công Nghệ Mystery</span> là một trong những doanh nghiệp tiên phong trong lĩnh vực Công nghệ thông tin tại Thành phố Hồ Chí Minh.</p>
+                            <p>Với tầm nhìn dài hạn, Mystery tập trung đầu tư vào lĩnh vực Công nghệ thông tin. Trên tinh thần phát triển bền vững và chuyên nghiệp, Mystery được cơ cấu với các sản phẩm kinh doanh chính gồm:</p>
+                            <ul class="field-wrapper">
+                                <li class="field-type">Màn hình máy tính</li>
+                                <li class="field-type">PC - Máy tính đồng bộ</li>
+                                <li class="field-type">Laptop văn phòng - Laptop Gaming</li>
+                                <li class="field-type">Linh kiện máy tính</li>
+                                <li class="field-type">Gaming Gear</li>
+                                <li class="field-type">Phụ kiện các loại</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="general-wrapper introduce-part">
+                        <div class="general-heading">2. Giá trị cốt lõi</div>
+                        <div class="general-detail">
+                            <p>Văn hóa Mystery được thể hiện qua bốn giá trị cốt lõi: <span>TẬN TÂM – TRÁCH NHIỆM – SÁNG TẠO – KHÁC BIỆT</span> </p>
+                            <div class="values">
+                                <div class="value-wrapper">
+                                    <div class="value value__1">
+                                        <img src="./assets/img/Something/gia-tri-cot-loi-my-4-150x150.jpg" alt="">
+                                        <h3>Tận tâm</h3>
+                                        <q>Vượt trên sự mong đợi</q>
+                                    </div>
+                                    <div class="value-detail">
+                                        <q>Mystery đặt tận tâm là nền tảng của phục vụ, lấy khách hàng làm trung tâm, mang đến những giá trị đích thực tới khách hàng và đối tác.</q>
+                                    </div>
+                                </div>
+                                <div class="value-wrapper">
+                                    
+                                    <div class="value-detail">
+                                        <q>Mystery đặt chữ TÍN lên hàng đầu, luôn thể hiện tinh thần trách nhiệm cao cùng phương châm “Làm hết việc chứ không làm hết giờ”.</q>
+                                    </div>
+                                    <div class="value value__2">
+                                        <img src="./assets/img/Something/gia-tri-cot-loi-my-5-150x150.jpg" alt="">
+                                        <h3>Trách nhiệm</h3>
+                                        <q>Chúng ta luôn cố gắng</q>
+                                    </div>
+                                </div>
+                                <div class="value-wrapper">
+                                    <div class="value value__3">
+                                        <img src="./assets/img/Something/gia-tri-cot-loi-my-6-150x150.jpg" alt="">
+                                        <h3>Khác biệt</h3>
+                                        <q>Dám nghĩ – Dám làm</q>
+                                    </div>
+                                    <div class="value-detail">
+                                        <q>Mystery đặt sự khác biệt là chủ trương để xây dựng công ty thành một doanh nghiệp dẫn đầu.</q>
+                                    </div>
+                                </div>
+                                <div class="value-wrapper">
+                                    
+                                    <div class="value-detail">
+                                        <q>Mystery coi sáng tạo là đòn bẩy để phát triển, luôn đề cao các sáng kiến để hoàn thiện, hiệu quả hơn, nâng tầm giá trị.</q>
+                                    </div>
+                                    <div class="value value__4">
+                                        <img src="./assets/img/Something/gia-tri-cot-loi-my-7-150x150.jpg" alt="">
+                                        <h3>Sáng tạo</h3>
+                                        <q>Không gì là không thể</q>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="general-wrapper introduce-part">
+                        <div class="general-heading">3. Sứ mệnh và mục tiêu</div>
+                        <div class="general-detail">
+                            <img src="./assets/img/Something/Sứ-mệnh.jpg" class="general-img" alt="">
+                            <img src="./assets/img/Something/Mục-tiêu.jpg" class="general-img" alt="">
+                        </div>
+                    </div>
+                    <div class="general-wrapper introduce-part">
+                        <div class="general-heading">4. Cơ cấu tổ chức</div>
+                        <div class="general-detail">
+                            <img src="./assets/img/Something/Cơ-cấu-tổ-chức.jpg" class="general-img" alt="">
+                        </div>
+                    </div>
+                    <div class="general-wrapper introduce-part">
+                        <div class="general-heading">5. Con người</div>
+                        <div class="general-detail">
+                            <div class="people">
+                                <h3>Hướng Đến Khách Hàng</h3>
+                                <p>Được phục vụ và mang đến sự hài lòng cho khách hàng là mục tiêu hàng đầu của Nhân viên Mystery</p>
+                            </div>
+                            <div class="people">
+                                <h3>Chính Trực</h3>
+                                <p>Làm đúng những gì cam kết từ những việc đơn giản nhất, công bằng và công khai minh bạch</p>
+                            </div>
+                            <div class="people">
+                                <h3>Quan Tâm</h3>
+                                <p>Tận tụy với khách hàng, tận tâm với nhân viên là cách chúng tôi lan tỏa giá trị tích cực và tinh thần trách nhiệm</p>
+                            </div>
+                            <div class="people">
+                                <h3>Đồng Đội</h3>
+                                <p>Sức mạnh của chúng tôi được tạo nên bởi sự đoàn kết và sẻ chia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="footer-wrapper">
+                <div class="top-service">
+                    <div class="service-list">
+                        <div class="service">
+                            <i class="fas fa-truck"></i>
+                            <div class="service-detail">
+                                <h3>Chính sách giao hàng</h3>
+                                <p>Nhận hàng và thanh toán tại nhà</p>
+                            </div>
+                        </div>
+                        <div class="service">
+                            <i class="fas fa-people-carry"></i>
+                            <div class="service-detail">
+                                <h3>Đổi trả dễ dàng</h3>
+                                <p>1 đổi 1 trong 15 ngày</p>
+                            </div>
+                        </div>
+                        <div class="service">
+                            <i class="far fa-credit-card"></i>
+                            <div class="service-detail">
+                                <h3>Thanh toán tiện lợi</h3>
+                                <p>Trả tiền mặt, trả góp 0%</p>
+                            </div>
+                        </div>
+                        <div class="service">
+                            <i class="far fa-comments"></i>
+                            <div class="service-detail">
+                                <h3>Hỗ trợ nhiệt tình </h3>
+                                <p>Tư vấn, giải đáp mọi thắc mắc</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="information-contact">
+                    <div class="contact">
+                        <div class="contact-heading">Thông tin Mystery</div>
+                        <span></span>
+                        <div class="contact-list">
+                            <div class="contact-list__content">Giới thiệu</div>
+                            <div class="contact-list__content">Thông tin liên hệ</div>
+                            <div class="contact-list__content">Thông tin tuyển dụng</div>
+                            <div class="contact-list__content">Tin tức</div>
+                            <div class="contact-list__content">Cộng đồng Mystery</div>
+                            <div class="contact-social">
+                                <i class="fab fa-facebook-square"></i>
+                                <i class="fab fa-youtube"></i>
+                                <i class="fab fa-instagram-square"></i>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-heading">Phương thức thanh toán</div>
+                        <span></span>
+                        <div class="contact-list">
+                            <div class="contact-list__content contact-payment">
+                                <i class="far fa-credit-card "></i>
+                                <p>Internet Banking</p>
+                            </div>
+                            <div class="contact-list__content contact-payment">
+                                <i class="far fa-clock"></i>
+                                <p>Trả góp</p>
+                            </div>
+                            <div class="contact-list__content contact-payment">
+                                <i class="fas fa-money-bill-alt "></i>
+                                <p>Tiền mặt</p>
+                            </div>
+                            <div class="contact-list__content contact-payment">
+                                <i class="fas fa-qrcode"></i>
+                                <p>QR code</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-heading">Email liên hệ</div>
+                        <span></span>
+                        <div class="contact-list">
+                            <div class="contact-list__content">
+                                <p>Hỗ trợ khách hàng</p>
+                                <a href="">cskh@mystery.vn</a>
+                            </div>
+                            <div class="contact-list__content">
+                                <p>Liên hệ báo giá</p>
+                                <a href="">baogia@mystery.vn</a>
+                            </div>
+                            <div class="contact-list__content">
+                                <p>Hợp tác phát triển</p>
+                                <a href="">hoptac@mystery.vn</a>
+                            </div>
+                            <div class="contact-list__content">
+                                <p>Tuyen dung nhân viên</p>
+                                <a href="">tuyendung@mystery.vn</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-heading">Hỗ trợ khách hàng</div>
+                        <span></span>
+                        <div class="contact-list">
+                            <div class="contact-list__content">Hướng dẫn mua hàng trực tuyến</div>
+                            <div class="contact-list__content">Hướng dẫn thanh toán</div>
+                            <div class="contact-list__content">Hướng dẫn mua hàng trả góp</div>
+                            <div class="contact-list__content">Gửi yêu cầu bảo hàng</div>
+                            <div class="contact-list__content">Góp ý, khiếu nại</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="footer-detail">
+                <div class="investor-wrapper">
+                    <div class="investor-heading">Các nhà đầu tư</div>
+                    <div class="investors">
+                        <div class="investor">
+                            <img src="./assets/img/logo/phonvu-logo.jpg" alt="" >
+                        </div>
+                        <div class="investor">
+                            <img src="./assets/img/logo/hanoicomputer-logo.jpg" alt="" >
+                        </div>
+                    </div>
+                </div>
+                <div class="mystery-address">
+                    <p>© 2021 Công Ty Cổ Phần Thương Mại - Dịch Vụ Mystery</p>
+                    <p>Trụ sở chính: Tầng 5, Số 117-119-121 Nguyễn Du, Phường Bến Thành, Quận 1, Thành Phố Hồ Chí Minh </p>
+                    <p>Cơ sở hai: Tầng 11 Minh Long Tower, số 17 Bà Huyện Thanh Quan, Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh</p>
+                    <p>Email: info@mystery.com. Điện thoại: 1900 9999</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="./assets/js/search.js"></script>
+    <script src="./assets/js/nav-onscroll.js"></script>
+    <script src="./assets/js/Nav.js"></script>
+</body>
+</html>

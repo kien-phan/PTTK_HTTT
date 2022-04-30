@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="shortcut icon" href="./assets/img/favicon/favicon.svg" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a2e771fb2d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/adminServer.css">
+    <title>Admin Server</title>
+    <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> -->
+    <!-- <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+</head>
+<!-- <style>
+    div .Nav_Search {
+      display: flex;
+      width: 35rem;
+      position: relative;
+      margin: 0 2rem;
+      height: 4rem;
+    }
+    .Nav_Search input {
+        border-radius: 4px;
+        width: 35rem;
+        border-right: none;
+        border-bottom-right-radius: none;
+        border-top-right-radius: none;
+    }
+    .Nav_Search button {
+        border-radius: 4px;
+        width: 4rem;
+        background-color: blue;
+    }
+    .Nav_Search button i {
+        color: white;
+    }
+  </style> -->
+<style>
+    .dropdown-user__list a:last-child:hover {
+        background-color: rgb(228, 227, 227);
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="header">
+                <header>
+                    <!-- Header Title Contact -->
+                    <div class="header_contact">
+                        <ul class="list_contact">
+                            <li class="info_contact">
+                                <i class="fas fa-home"></i>
+                                <p>Hệ thống showroom</p>
+                            </li>
+                            <li class="info_contact">
+                                <i class="fas fa-headset"></i>
+                                <p>Tư vấn mua hàng: <tel>1900 1234</tel>
+                                </p>
+                            </li>
+                            <li class="info_contact">
+                                <i class="fas fa-tv"></i>
+                                <p>Tin tức công nghệ</p>
+                            </li>
+                            <li class="info_contact">
+                                <i class="fas fa-tools"></i>
+                                <p>Xây dựng cấu hình</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <nav>
+                        <!-- Navagation -->
+                        <div class="Navbar">
+                            <a onclick="logOutAdmin()"><img src="./assets/img/logo/Logo_Mystery_Light.svg" alt=""
+                                    class="Nav_logo"></a>
+                            <div class="dropdown">
+                                <i class="fas fa-bars"></i>
+                                <button class="btn-dropdown"> Danh mục sản phẩm</button>
+                                <div class="dropdown__list">
+                                    <a href="#" onclick="viewAllProduct('laptop')">Laptop - Macbook</a>
+                                    <a href="#" onclick="viewAllProduct('PC')">PC - Máy tính đồng bộ</a>
+                                    <a href="#" onclick="viewAllProduct('Monitor')">Màn hình máy tính</a>
+                                    <a href="#" onclick="viewAllProduct('components')">Linh kiện máy tính</a>
+                                    <a href="#" onclick="viewAllProduct('Spare-part')">Phụ kiện & thiết bị ngoại vi</a>
+                                </div>
+                            </div>
+                            <div class="Nav_Search">
+                                <div class="Search-wrapper">
+                                    <input type="text" placeholder="Nhập từ khóa cần tìm" id="search-input1">
+                                    <button id="search-btn1"><i class="fas fa-search"></i></button>
+                                </div>
+                                <ul id="search-box1"></ul>
+                            </div>
+                            <div class="Nav_listchoose">
+                                <ul>
+                                    <li class="list_item"><a href="./PromotionAdmin.html"><i
+                                                class="fas fa-receipt"></i>Khuyến mãi</a></li>
+                                    <li class="list_item dropdown-user">
+                                        <a onclick="logOutAdmin()"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                                    </li>
+                                    <li class="list_item dropdown-user">
+                                        <i class="fas fa-toolbox"></i>Tính năng
+                                        <div class="dropdown-user__list">
+                                            <a id="featureItem">Quản lý tài khoản</a>
+                                            <a id="featureItem">Doanh Thu</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="Navbar">
+                            <a onclick="logOutAdmin()"><img src="./assets/img/logo/Logo_Mystery_Light.svg" alt=""
+                                    class="Nav_logo"></a>
+                            <div class="dropdown">
+                                <i class="fas fa-bars"></i>
+                                <button class="btn-dropdown"> Danh mục sản phẩm</button>
+                                <div class="dropdown__list">
+                                    <a href="./laptopAdmin.html">Laptop - Macbook</a>
+                                    <a href="./pcAdmin.html">PC - Máy tính đồng bộ</a>
+                                    <a href="./screenAdmin.html">Màn hình máy tính</a>
+                                    <a href="./componentsAdmin.html">Linh kiện máy tính</a>
+                                    <a href="./sparePartsAdmin.html">Phụ kiện & thiết bị ngoại vi</a>
+                                </div>
+                            </div>
+                            <div class="Nav_Search">
+                                <input type="text" placeholder="Nhập từ khóa cần tìm">
+                                <button><i class="fas fa-search"></i></button>
+                            </div>
+                            <div class="Nav_listchoose">
+                                <ul>
+                                    <li class="list_item"><a href="./PromotionAdmin.html"><i
+                                                class="fas fa-receipt"></i>Khuyến mãi</a></li>
+                                    <li class="list_item dropdown-user">
+                                        <a onclick="logOutAdmin()"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                                    </li>
+                                    <li class="list_item dropdown-user">
+                                        <i class="fas fa-toolbox"></i>Tính năng
+                                        <div class="dropdown-user__list">
+                                            <a class="featureList__item">Quản lý tài khoản</a>
+                                            <a class="featureList__item">Doanh Thu</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="interactive-active">
+                        <div class="active-socials">
+                            <div class="active-social tel">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="active-social email">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="active-social address"><i class="fas fa-map-marker-alt "></i></div>
+                            <div class="active-social face"><i class="fab fa-facebook-f "></i></div>
+                        </div>
+                        <div id="backToTop">
+                            <a href="#"><i class="fas fa-arrow-up"></i></a>
+                        </div>
+                        <!-- <div class="active-chat">
+              <i class="fas fa-comment-alt"></i>
+              <p>Chat mua hàng trực tuyến từ 8h - 24h</p>
+            </div> -->
+
+                        <div class="active-alert">
+
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <section class="body">
+                <div style="padding: 0 !important;" class="body-wrapper">
+                    <div class="grid wide">
+                        <div class="row">
+                            <div class="col l-2 m-2 c-2">
+                                <div class="col-1__container">
+                                    <div class="col-1__heading ">
+                                        <i class="fas fa-user-circle"></i>
+                                        <p>Chào mừng <span class="username">Admin Server</span> </p>
+                                    </div>
+                                    <div class="management-list">
+                                        <a class="management-list__page management-active">
+                                            <i class="fas fa-user"></i>
+                                            <p>Quản lý tài khoản</p>
+                                        </a>
+                                        <a class="management-list__page ">
+                                            <i class="far fa-calendar-check"></i>
+                                            <p>Doanh thu</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-9 m-9 c-9" id="renderSide">
+                                <div class="accountManage">
+                                    <div class="accountManage__switchBtns">
+                                        <div class="adminManage_btn accountManage__btn--active" onclick="clickAdmin()">
+                                            <span>Admin</span>
+                                        </div>
+                                        <div class="userManage_btn" onclick="clickUser()">
+                                            <span>User</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="accountManage__body">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <div class="footer-wrapper">
+                    <div class="top-service">
+                        <div class="service-list">
+                            <div class="service">
+                                <i class="fas fa-truck"></i>
+                                <div class="service-detail">
+                                    <h3>Chính sách giao hàng</h3>
+                                    <p>Nhận hàng và thanh toán tại nhà</p>
+                                </div>
+                            </div>
+                            <div class="service">
+                                <i class="fas fa-people-carry"></i>
+                                <div class="service-detail">
+                                    <h3>Đổi trả dễ dàng</h3>
+                                    <p>1 đổi 1 trong 15 ngày</p>
+                                </div>
+                            </div>
+                            <div class="service">
+                                <i class="far fa-credit-card"></i>
+                                <div class="service-detail">
+                                    <h3>Thanh toán tiện lợi</h3>
+                                    <p>Trả tiền mặt, trả góp 0%</p>
+                                </div>
+                            </div>
+                            <div class="service">
+                                <i class="far fa-comments"></i>
+                                <div class="service-detail">
+                                    <h3>Hỗ trợ nhiệt tình </h3>
+                                    <p>Tư vấn, giải đáp mọi thắc mắc</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="information-contact">
+                        <div class="contact">
+                            <div class="contact-heading">Thông tin Mystery</div>
+                            <span></span>
+                            <div class="contact-list">
+                                <div class="contact-list__content">Giới thiệu</div>
+                                <div class="contact-list__content">Thông tin liên hệ</div>
+                                <div class="contact-list__content">Thông tin tuyển dụng</div>
+                                <div class="contact-list__content">Tin tức</div>
+                                <div class="contact-list__content">Cộng đồng Mystery</div>
+                                <div class="contact-social">
+                                    <i class="fab fa-facebook-square"></i>
+                                    <i class="fab fa-youtube"></i>
+                                    <i class="fab fa-instagram-square"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <div class="contact-heading">Phương thức thanh toán</div>
+                            <span></span>
+                            <div class="contact-list">
+                                <div class="contact-list__content contact-payment">
+                                    <i class="far fa-credit-card "></i>
+                                    <p>Internet Banking</p>
+                                </div>
+                                <div class="contact-list__content contact-payment">
+                                    <i class="far fa-clock"></i>
+                                    <p>Trả góp</p>
+                                </div>
+                                <div class="contact-list__content contact-payment">
+                                    <i class="fas fa-money-bill-alt "></i>
+                                    <p>Tiền mặt</p>
+                                </div>
+                                <div class="contact-list__content contact-payment">
+                                    <i class="fas fa-qrcode"></i>
+                                    <p>QR code</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <div class="contact-heading">Email liên hệ</div>
+                            <span></span>
+                            <div class="contact-list">
+                                <div class="contact-list__content">
+                                    <p>Hỗ trợ khách hàng</p>
+                                    <a href="">cskh@mystery.vn</a>
+                                </div>
+                                <div class="contact-list__content">
+                                    <p>Liên hệ báo giá</p>
+                                    <a href="">baogia@mystery.vn</a>
+                                </div>
+                                <div class="contact-list__content">
+                                    <p>Hợp tác phát triển</p>
+                                    <a href="">hoptac@mystery.vn</a>
+                                </div>
+                                <div class="contact-list__content">
+                                    <p>Tuyen dung nhân viên</p>
+                                    <a href="">tuyendung@mystery.vn</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <div class="contact-heading">Hỗ trợ khách hàng</div>
+                            <span></span>
+                            <div class="contact-list">
+                                <div class="contact-list__content">Hướng dẫn mua hàng trực tuyến</div>
+                                <div class="contact-list__content">Hướng dẫn thanh toán</div>
+                                <div class="contact-list__content">Hướng dẫn mua hàng trả góp</div>
+                                <div class="contact-list__content">Gửi yêu cầu bảo hàng</div>
+                                <div class="contact-list__content">Góp ý, khiếu nại</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-detail">
+                    <div class="investor-wrapper">
+                        <div class="investor-heading">Các nhà đầu tư</div>
+                        <div class="investors">
+                            <div class="investor">
+                                <img src="./assets/img/logo/phonvu-logo.jpg" alt="">
+                            </div>
+                            <div class="investor">
+                                <img src="./assets/img/logo/hanoicomputer-logo.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mystery-address">
+                        <p>© 2021 Công Ty Cổ Phần Thương Mại - Dịch Vụ Mystery</p>
+                        <p>Trụ sở chính: Tầng 5, Số 117-119-121 Nguyễn Du, Phường Bến Thành, Quận 1, Thành Phố Hồ Chí
+                            Minh </p>
+                        <p>Cơ sở hai: Tầng 11 Minh Long Tower, số 17 Bà Huyện Thanh Quan, Phường Võ Thị Sáu, Quận 3, TP.
+                            Hồ Chí Minh</p>
+                        <p>Email: info@mystery.com. Điện thoại: 1900 9999</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- <script src="../../js/DropdownNav.js"></script>
+  <script src="../../js/EditAccount.js"></script>
+  <script src="../../js/user.js"></script> -->
+        <script src="./assets/js/adminServerjs.js"></script>
+        <script src="./assets/js/product.js"></script>
+        <script src="./assets/js/load.js"></script>
+        <!-- <script>
+            
+            
+            userBtn.addEventListener('click', () => {
+
+               
+            })
+
+
+
+            adminBtn.addEventListener('click', () => {
+
+                userBtn.classList.remove('accountManage__btn--active')
+                adminBtn.classList.add('accountManage__btn--active')
+                initAccountManage();
+            })
+        </script> -->
+        <!-- <script src="./assets/js/"></script> -->
+</body>
+
+</html>

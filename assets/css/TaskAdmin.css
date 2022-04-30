@@ -1,0 +1,243 @@
+/* Promotion */
+.promotion-plus{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.promotion i{ 
+    font-size: 15rem;
+    color: var(--color-primary);
+}
+.promotion-plus p{
+    font-size: 1.8rem;
+    letter-spacing: .05rem;
+    color: var(--color-primary);
+}
+.edit-btn{
+    display: flex;
+    flex-direction: column;
+}
+.edit-btn .btn:first-child{
+    margin-bottom: 1rem;
+}
+
+
+/* Turnover */
+.chart{
+    width: 70% ;
+    height: auto;
+}
+.turnover-status{
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 3rem;
+    margin-left: 25rem;
+}
+.account-wrapper{
+    padding: 2rem;
+    padding-left: 3rem;
+    margin-top: 1rem;
+}
+
+.account-management{
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    background-color: #fff;
+    padding: .5rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+.account-heading{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    font-size: 1.6rem;
+    padding-bottom: 1rem;
+    border-bottom:  1px solid var(--color-third);
+}
+.account-heading div:first-child,
+.account-management p:first-child{
+    width: 15%;
+}
+.account-heading div:nth-child(2),
+.account-management p:nth-child(2){
+    width: 20%;
+}
+.account-heading div:nth-child(3),
+.account-management p:nth-child(3){
+    width: 30%;
+}
+.account-management p:nth-child(4){
+    width: 20%;
+}
+.account-management .account-btn{
+    display: flex;
+    flex-direction: column;
+}
+.account-btn .btn{
+    margin: .3rem;
+}
+
+/*  */
+.order-status__heading{
+    margin: 1rem 0 2rem;
+}
+.order-status__heading a{
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #000;
+    padding: 1rem 0;
+    margin-right: 2rem;
+}
+.active-order-page{
+    border-bottom: 2px solid var( --color-secondary) ;
+    font-weight: 500;
+}
+.order-filter form{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.order-filter form .form-select{
+    font-size: 1.4rem;
+    padding: .5rem;
+    overflow: hidden;
+}
+.form-select select {
+    border-radius: 5px;
+    padding: 1rem;
+}
+.order-search{
+    border: 1px solid var(--color-third);
+    border-radius: 5px;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.order-search input{
+    padding: 1rem;
+    font-size: 1.4rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    flex: 1;
+}
+.order-search button{
+    margin-right: .3rem;
+}
+.order-filter form button{
+    margin-left: 2rem;
+    font-size: 1.4rem;
+}
+.order-wrapper{
+    background-color: #fff;
+    margin: 1rem 0;
+}
+.order-wrapper table tr{
+    padding: 1rem;
+    border-bottom:1px solid var(--color-third) ;
+    margin: 1rem;
+}
+table tr th,
+table tr td{
+    padding: 1rem;
+    text-align: left;
+    font-size: 1.4rem;
+}
+table tr th:first-child,
+table tr td:first-child{
+    width: 12%;
+}
+table tr th:nth-child(5),
+table tr td:nth-child(5){
+    width: 10%;
+}
+table tr td button{
+    width: 6rem;
+}
+.dot-pages{
+    margin: 3rem 0 2rem;
+}
+.dot-page-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.6rem;
+}
+.dot-page-wrapper .dot-page{
+    padding: .5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 0 .3rem;
+}
+.dot-page-wrapper i{
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+.dot-page-wrapper .dot-page-detail{
+    margin-left: 5rem;
+}
+.dot-page-active,.dot-page-wrapper .dot-page:hover{
+    background-color: var(--color-secondary);
+    color: #fff;
+}
+.btn-order{
+    border-radius: 50px;
+    height: 30px;
+    width: 30px;
+    color: #fff;
+    background-color: var(--color-secondary);
+    font-size: 1.4rem;
+    padding: 3px 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s linear;
+    outline: none;
+    border: 1px solid var(--color-secondary);
+}
+.btn-order:hover{
+    background-color: var(--btn-color);
+    color: #fff;
+    border: 1px solid var(--btn-color);
+}
+
+/*  */
+.Expense{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding:  1rem;
+}
+.Expense .Expense-type{
+    font-size: 1.8rem;
+    margin: 0 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    padding: .5rem;
+    margin-left: 2rem;
+}
+.Expense-type .expense-detail{
+    line-height: 3rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.Expense-type .expense-price1{
+    color: var(--color-secondary);
+    font-weight: 500;
+}
+.Expense-type .expense-price2{
+    color: rgb(175, 18, 18);
+    font-weight: 500;
+}
+.Expense-type .expense-price3{
+    color: rgb(15, 138, 25);
+    font-weight: 500;
+}

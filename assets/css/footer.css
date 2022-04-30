@@ -1,0 +1,139 @@
+.footer-wrapper{
+    padding: 0 10%;
+    border-top: .1rem solid var(--color);
+    background-color: #e9edf2;
+    position: relative;
+}
+.top-service{
+    padding: 4rem 0;
+    border-bottom: 1px dotted var(--color-primary);
+    width: 100%;
+}
+.service-list, 
+.information-contact{
+    display: flex; 
+    flex-wrap: wrap;
+    margin-left: -2rem;
+}
+.service-list  .service,
+.information-contact .contact{
+    font-size: 1.6rem;
+    display: flex;
+    width: calc(25% - 3rem );
+    margin-left: 3rem;
+    cursor: pointer;
+}
+
+.service .fas,.service .far{
+    font-size: 2.8rem;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    color: orangered;
+    margin-right: .5rem;
+}
+.service-detail h3{
+    font-size: 1.8rem;
+    letter-spacing: .003rem;
+    text-transform: uppercase;
+    line-height: 2.2rem;
+    
+}
+.service-detail p{
+    font-size: 1.4rem;
+}
+.information-contact .contact{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex: 1;
+    padding-bottom: 2rem;
+}
+.contact .contact-heading{
+    position: relative;
+    padding: 1rem 0 .5rem 0;   
+    margin: 1rem 0 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2rem;
+}
+.contact-heading::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 10rem;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-primary);
+}
+
+.contact .contact-payment{
+    display: flex;
+}
+.contact-payment  i{
+    width: 2.5rem;
+}
+.contact-list__content{
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    padding: .2rem 0;
+}
+.contact-social{
+    margin: .1rem 0;
+}
+.contact-social i{
+    font-size: 3rem;
+    margin-left: .5rem;
+}
+.contact-social .fa-facebook-square{
+    color: #365899;
+}
+.contact-social .fa-youtube{
+    color: #d60b0b;
+}
+.contact-social .fa-instagram-square{
+    color: #E95950;
+}
+.contact-list__content:hover{
+    color: var(--color);
+}
+.contact-list__content a{
+    text-decoration: none;
+}
+.contact-payment i{
+    font-size: 1.8rem;
+    margin-right: .5rem;
+
+}
+.footer-detail{
+    padding: 2rem 10%;
+    border-top:  1px dotted var(--color-primary);
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+}
+.footer-detail .investors{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.footer-detail .mystery-address{
+    width: 60%;
+}
+.mystery-address p{
+    font-size: 1.2rem;
+    padding: .15rem 0;
+}
+.investor-heading{
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: .05rem;
+    margin-left: .8rem;
+    color:var(--color-primary);
+}
+.investors .investor img{
+    height: 10rem;
+    width: 20rem;
+    object-fit: contain;
+}

@@ -1,0 +1,343 @@
+.form{
+    border-radius: 10px;
+    width: 70rem;
+	height: 70rem;
+	margin: auto;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+	user-select: none;
+}
+.form-wrapper{
+	background-color: #ddd;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+    position: relative;
+}
+.form-input {
+	background-color: #eee;
+	border: none;
+	padding: 1.2rem 1.5rem;
+	margin: 8px 0;
+	width: 100%;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    height: 1rem;
+    border-radius: 5px;
+
+}
+.form-field{
+    position: relative;
+    width: 100%;
+    transform: translateX(-1.6rem);
+	text-align: left;
+	display: inline-block;
+	margin: .8rem 0;
+}
+.form-field i {
+	position: absolute;
+	top: 35%;
+	right: -2rem;
+	font-size: 1.2rem;
+	visibility: hidden;
+}
+
+.form-field p {
+	position: absolute;
+	left: 0;
+	bottom: -1rem;
+	font-size: 1.2rem;
+	visibility: hidden;
+}
+.form-field .form-label{
+    position: absolute;
+    top: 35%;
+    left: 1.5rem;
+    font-size: 1.2rem;
+    user-select: none;
+    pointer-events: none;
+    color: #999;
+    transition: all 0.2s linear;
+}
+.form-field.success input{
+	border-color: #2ecc71;
+}
+.form-field.error input{
+	border-color: #e74c3c;
+
+}
+.form-field.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+.form-field.error i.fa-exclamation-circle{
+	color: #e74c3c;
+	visibility: visible;
+}
+.form-field.error p{
+	color: #e74c3c;
+	visibility: visible;
+}
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown)+.form-label{
+    top: 0;
+    left: 1rem;
+    padding: 0 10px;
+    color: #000;
+    background-color: #ddd;
+    display: inline-block;
+	border-radius: 20px;
+}
+.form-content{
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 10px 10px 5px rgba(0,0,0,0.25), 
+			5px 0px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+	min-height: 560px;
+}
+
+.form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.form-content.right-panel-active .sign-in-container {
+	transform: translateX(100%);
+}
+
+.sign-up-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+.form-content.right-panel-active .sign-up-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+.forgot-pass{
+	margin: .5rem 0;
+	
+}
+.overlay-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 10;
+}
+
+.form-content.right-panel-active .overlay-container{
+	transform: translateX(-100%);
+}
+
+.overlay {
+	background: rgb(9,52,173);
+    background: linear-gradient(90deg, rgba(9,52,173,1) 0%, rgba(70,144,172,1) 50%, rgba(10,146,195,1) 100%);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.form-content.right-panel-active .overlay {
+  	transform: translateX(50%);
+}
+
+.overlay-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 45%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+.overlay-panel h1{
+    margin-bottom: .5rem;
+}
+.overlay-left {
+	transform: translateX(-20%);
+}
+
+.form-content.right-panel-active .overlay-left {
+	transform: translateX(-6%);
+}
+
+.overlay-right {
+	right: 0;
+	transform: translateX(5%);
+}
+
+.form-content.right-panel-active .overlay-right {
+	transform: translateX(10%);
+}
+
+.social-container {
+	margin: 20px 0;
+}
+.form-content .btn{
+	font-weight: 500;
+} 
+.social-container a {
+	border: 1px solid #fff;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+}
+.forgot-pass{
+    text-transform: capitalize;
+    font-size: 1.2rem;
+	transition: all .4s linear;
+}
+.forgot-pass:hover{
+	text-decoration: underline;
+	color: var(--color);
+	font-weight: 500;
+}
+.heading-form{
+    font-size: 24px;
+    font-weight:700;
+    line-height: 26px;
+}
+.question-choose{
+    font-size: 1.2rem;
+}
+.social-container .social{
+	font-size: 1.2rem;
+	transition: all .2s linear;
+	color: var(--color);
+	text-decoration: none;
+}
+.social-container .social:hover{
+	background-color: var(--color);
+	color: #fff;
+	border-color: var(--color);
+	transform: scale(1.1);
+}
+/* Forgot Password */
+.modal-sign {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content-sign {
+	margin: 10% auto;
+	width: 60%;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+	animation-name: modal-open;
+	animation-duration: 1s;
+	z-index: 1000;
+	border-radius: 10px;
+  }
+  
+  .modal-header-sign h2{
+	margin: 0;
+	font-size: 1.8rem;
+  }
+  .modal-content-sign{
+	  border-radius: 10px;
+  }
+  .modal-header-sign {
+	background: var(--color-secondary);
+	padding: 15px;
+	color: #fff;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  }
+  
+  .modal-body {
+	padding: 10px 20px;
+	background: #fff;
+	font-size: 1.8rem;
+	height: auto;
+  }
+  
+  .close-sign {
+	color: #ccc;
+	float: right;
+	font-size: 30px;
+	color: #fff;
+  }
+  
+  .close-sign:hover,
+  .close-sign:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  
+  @keyframes modal-open {
+	from {
+	  opacity: 0;
+	}
+	to {
+	  opacity: 1;
+	}
+  }
+  
+
+.reg-message,.heading-form,.question-choose{
+	color: #000;
+}
