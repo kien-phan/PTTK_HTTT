@@ -56,20 +56,6 @@ htmlAddproduct += `<div class="col-2_wrapper">
 </form> </div>
 `
 
-var htmlOderManage = `<div class="order__heading">
-<h2 class="col-2__heading">Quản lý đơn hàng</h2>
-</div>
-<div class="order-data-type">
-<div class="order-type --1"><p> Mã đơn hàng</p></div>
-<div class="order-type --2"><p> Tên khách hàng</p></div>
-<div class="order-type --3"><p> Ngày mua</p> </div>
-<div class="order-type --4"><p> Địa chỉ</p></div>
-<div class="order-type --5"><p> Phương thức TT</p></div>
-<div class="order-type --6"> </div>
-</div>
-<ul class="order-wrapper">
-
-</ul>`;
 var htmlRevenue = `
 <div class="order__heading">
 <h2 class="col-2__heading">Doanh thu</h2>
@@ -89,6 +75,24 @@ var htmlProductManage = `<div class="order__heading">
 </div>
 <div id="pagination__all" class="pagination"></div>`
 
+var htmlOderManage = `<div class="accountManage">
+<div class="order__heading">
+    <h2 class="col-2__heading">Quản lý đơn hàng</h2>
+    </div>
+<div class="accountManage__switchBtns">
+    <div class="adminManage_btn accountManage__btn--active" onclick="clickAdmin()">
+        <span>Đơn đang chờ</span>
+    </div>
+    <div class="userManage_btn" onclick="clickUser()">
+        <span>Đơn đã duyệt</span>
+    </div>
+</div>
+
+<div class="accountManage__body">
+   
+</div>
+</div>`;
+
 
 const btnSwitches = document.querySelectorAll('.management-list__page')
 const renderSide = document.querySelector('#renderSide')
@@ -107,7 +111,8 @@ btnSwitches.forEach(element => {
             renderSide.innerHTML = htmlOderManage;
             let sectionUser = JSON.parse(window.localStorage.getItem('sectionUserName'));
             if (sectionUser.role === 'adminSeller') {
-                renderOrder();
+                renderOrderStat0Header();
+                renderOrderStat0Content();
             }
         }
         if (element == btnSwitches[2]) {
@@ -119,10 +124,81 @@ btnSwitches.forEach(element => {
             renderSide.innerHTML = htmlProductManage;
             let products = JSON.parse(localStorage.getItem('products'));
             renderProduct(products);
-            
+
         }
     })
 })
+
+function renderOrderStat0Header() {
+    var html = `
+    <div class="order-data-type">
+    <div class="order-type --1"><p> Mã đơn hàng</p></div>
+    <div class="order-type --2"><p> Tên khách hàng</p></div>
+    <div class="order-type --3"><p> Ngày mua</p> </div>
+    <div class="order-type --4"><p> Địa chỉ</p></div>
+    <div class="order-type --5"><p> Phương thức TT</p></div>
+    <div class="order-type --6"> </div>
+    </div>
+    <ul class="order-wrapper">
+    
+    </ul>`;
+    document.querySelector('.accountManage__body').innerHTML = html
+}
+
+function renderOrderStat0Content() {
+    let orderList = JSON.parse(localStorage.getItem('cartList'));
+    let htmls = orderList.map(order => {
+        if (order.stat == 0) {
+            return `
+            <li class="order__info">
+                <div class="order__data --1">${order.id}</div>
+                <div class="order__data --2">${order.user.fullname}</div>
+                <div class="order__data --3">${order.date}</div>
+                <div class="order__data --4">${order.address}</div>
+                <div class="order__data --5">${order.paymentMethod}</div>
+                <div class="order__data --6">
+                    <div class="btn" onclick="handleChangeStatus('${order.id}')">Xem chi tiết</div>
+                    <div class="btn" onclick="confirmOrder('${order.id}')">Duyệt đơn hàng</div>
+                </div>
+            </li>       
+            `
+        }
+    })
+    document.querySelector('.order-wrapper').innerHTML = htmls.join('');
+}
+
+function clickUser() {
+    const adminBtn = document.querySelector('.adminManage_btn')
+    const userBtn = document.querySelector('.userManage_btn')
+    adminBtn.classList.remove('accountManage__btn--active');
+    userBtn.classList.add('accountManage__btn--active');
+    let orderList = JSON.parse(localStorage.getItem('cartList'));
+    let htmls = orderList.map(order => {
+        if (order.stat == 1) {
+            return `
+            <li class="order__info">
+                <div class="order__data --1">${order.id}</div>
+                <div class="order__data --2">${order.user.fullname}</div>
+                <div class="order__data --3">${order.date}</div>
+                <div class="order__data --4">${order.address}</div>
+                <div class="order__data --5">${order.paymentMethod}</div>
+                <div class="order__data --6">
+                    <div class="btn" onclick="handleChangeStatus('${order.id}')">Xem chi tiết</div>
+                </div>
+            </li>       
+            `
+        }
+    })
+    document.querySelector('.order-wrapper').innerHTML = htmls.join('');
+}
+
+function clickAdmin() {
+    const adminBtn = document.querySelector('.adminManage_btn')
+    const userBtn = document.querySelector('.userManage_btn')
+    userBtn.classList.remove('accountManage__btn--active')
+    adminBtn.classList.add('accountManage__btn--active')
+    renderOrderStat0Content()
+}
 
 function viewAllProduct(productType) {
     let products = JSON.parse(localStorage.getItem('products'));
@@ -340,28 +416,28 @@ function renderProduct(products) {
 
 function productManageSearch() {
     var inputElement = document.getElementById('ProductManage__SearchInput')
-        let products = JSON.parse(localStorage.getItem('products'));
-        var html = ``
-        var count = 0;
-        var productsNew = []
-        products.forEach(function (product) {
-                if (product.title.toUpperCase().indexOf(inputElement.value.toUpperCase()) > -1 && inputElement.value.length > 1) {
-                   productsNew.push(product);
-                }
-        });
+    let products = JSON.parse(localStorage.getItem('products'));
+    var html = ``
+    var count = 0;
+    var productsNew = []
+    products.forEach(function (product) {
+        if (product.title.toUpperCase().indexOf(inputElement.value.toUpperCase()) > -1 && inputElement.value.length > 1) {
+            productsNew.push(product);
+        }
+    });
 
-            if (productsNew.length) {
-                $(() => {
-                    let container = $('#pagination__all');
-                    container.pagination({
-                        dataSource: [
-                            ...productsNew,
-                        ],
-                        pageSize: 10,
-                        callback: function (data, pagination) {
-                            var dataHtml = ``;
-                            $.each(data, function (index, product) {
-                                dataHtml += `
+    if (productsNew.length) {
+        $(() => {
+            let container = $('#pagination__all');
+            container.pagination({
+                dataSource: [
+                    ...productsNew,
+                ],
+                pageSize: 10,
+                callback: function (data, pagination) {
+                    var dataHtml = ``;
+                    $.each(data, function (index, product) {
+                        dataHtml += `
                                     <div class="productItem">
                                 <img src="${product.image}" alt="" class="productImg">
                                 <div class="productName">${product.title}</div>
@@ -376,17 +452,17 @@ function productManageSearch() {
                                 </div>
                             </div>
                                     `;
-                            });
-                            dataHtml += '</div>';
-                            $(".productsContainer").html(dataHtml);
-                        }
-                    })
-                })
-            }
-            else if (productsNew.length == 0) {
-                renderProduct(products);
-            }
-            console.log(inputElement)
+                    });
+                    dataHtml += '</div>';
+                    $(".productsContainer").html(dataHtml);
+                }
+            })
+        })
+    }
+    else if (productsNew.length == 0) {
+        renderProduct(products);
+    }
+    console.log(inputElement)
 }
 
 
@@ -523,28 +599,6 @@ function deleteProduct(id) {
 }
 
 
-function renderOrder() {
-    let orderList = JSON.parse(localStorage.getItem('cartList'));
-    let htmls = orderList.map(order => {
-        if (order.stat == 0) {
-            return `
-            <li class="order__info">
-                <div class="order__data --1">${order.id}</div>
-                <div class="order__data --2">${order.user.fullname}</div>
-                <div class="order__data --3">${order.date}</div>
-                <div class="order__data --4">${order.address}</div>
-                <div class="order__data --5">${order.paymentMethod}</div>
-                <div class="order__data --6">
-                    <div class="btn" onclick="handleChangeStatus('${order.id}')">Xem chi tiết</div>
-                    <div class="btn" onclick="confirmOrder('${order.id}')">Duyệt đơn hàng</div>
-                </div>
-            </li>       
-            `
-        }
-    })
-    document.querySelector('.order-wrapper').innerHTML = htmls.join('');
-}
-
 function handleChangeStatus(id) {
     let orderList = JSON.parse(localStorage.getItem('cartList'));
     let index = orderList.findIndex(product => product.id === id);
@@ -598,7 +652,7 @@ function confirmOrder(orderId) {
     localStorage.setItem('cartList', JSON.stringify(orderList));
     localStorage.setItem('products', JSON.stringify(productList));
     localStorage.setItem('invoiceList', JSON.stringify(invoiceList));
-    renderOrder();
+    renderOrderStat0Content();
 }
 
 function logOutAdmin() {

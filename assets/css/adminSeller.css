@@ -100,3 +100,45 @@ table, th, td {
 #ProductManage__SearchInput {
     min-height: 26px;
 }
+
+/* quan ly don hang */
+.accountManage {
+    width: 100%;
+    padding: 8px;
+}
+
+.accountManage__switchBtns {
+    width: 100%;
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-radius: 8px;
+}
+
+.accountManage__switchBtns span {
+    font-size: 16px;
+}
+
+.accountManage__switchBtns div {
+    width: 50%;
+    text-align: center;
+}
+
+.accountManage__btn--active {
+    border-bottom: 4px solid #0A92C3;
+}
+
+.adminManage_btn, .userManage_btn {
+    cursor: pointer;
+}
+
+.adminManage_btn:hover, .userManage_btn:hover {
+    opacity: 0.5;
+}
+
+.accountManage__body {
+    width: 100%;
+    background-color: white ;
+    margin-top: 16px;
+}

@@ -1,185 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Mystery</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=7">
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/main.css">
-  <link rel="shortcut icon" href="./assets/img/favicon/favicon.svg" type="image/x-icon">
-  <script src="https://kit.fontawesome.com/a2e771fb2d.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="shortcut icon" href="./assets/img/favicon/favicon.svg" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a2e771fb2d.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+
     <div class="main">
         <div class="header">
-          <header>
-            <!-- Header Title Contact -->
-            <div class="header_contact">
-                <ul class="list_contact">
-                  <li class="info_contact">
-                      <a href="./introduce.html">
-                        <i class="fas fa-home"></i>
-                        <p>Giới thiệu về Mystery</p>
-                      </a>
-                    </li>
-                  <li class="info_contact">
-                      <a href="#footer">
-                          <i class="fas fa-headset"></i>
-                          <p>Thông tin liên hệ</p>
-                      </a>
-                  </li>
-                  <li class="info_contact">
-                    <i class="fas fa-tv"></i>
-                    <p>Tin tức công nghệ</p>
-                  </li>
-                  <li class="info_contact">
-                    <i class="fas fa-tools"></i>
-                    <p>Xây dựng cấu hình</p>
-                  </li>
-                </ul>
-              </div> 
-            <nav>
-                <!-- Navagation -->
-                  <div class="Navbar">           
-                      <a href="./index.html"><img src="./assets/img/logo/Logo_Mystery_Light.svg" alt=""class="Nav_logo"></a>
-                      <div class="dropdown">
-                          <i class="fas fa-bars"></i>
-                          <button class="btn-dropdown"> Danh mục sản phẩm</button>
-                          <div class="dropdown__list">
-                            <a href="#" onclick="viewAllProduct('laptop')">Laptop - Macbook</a>
-                            <a href="#" onclick="viewAllProduct('PC')">PC - Máy tính đồng bộ</a>
-                            <a href="#" onclick="viewAllProduct('Monitor')">Màn hình máy tính</a>
-                            <a href="#" onclick="viewAllProduct('components')">Linh kiện máy tính</a>
-                            <a href="#" onclick="viewAllProduct('Spare-part')">Phụ kiện & thiết bị ngoại vi</a>
-                          </div>
-                      </div>                                              
-                      <div class="Nav_Search">
-                        <div class="Search-wrapper">
-                          <input type="text" placeholder="Nhập từ khóa cần tìm" id="search-input">
-                          <button id="search-btn"><i class="fas fa-search"></i></button>
+            <header>
+                <!-- Header Title Contact -->
+                <div class="header_contact">
+                    <ul class="list_contact">
+                        <li class="info_contact">
+                            <a href="./introduce.html">
+                                <i class="fas fa-home"></i>
+                                <p>Giới thiệu về Mystery</p>
+                            </a>
+                        </li>
+                        <li class="info_contact">
+                            <a href="#footer">
+                                <i class="fas fa-headset"></i>
+                                <p>Thông tin liên hệ</p>
+                            </a>
+                        </li>
+                        <li class="info_contact">
+                            <i class="fas fa-tv"></i>
+                            <p>Tin tức công nghệ</p>
+                        </li>
+                        <li class="info_contact">
+                            <i class="fas fa-tools"></i>
+                            <p>Xây dựng cấu hình</p>
+                        </li>
+                    </ul>
+                </div>
+                <nav>
+                    <!-- Navagation -->
+                    <div class="Navbar">
+                        <a href="./index.html"><img src="./assets/img/logo/Logo_Mystery_Light.svg" alt=""
+                                class="Nav_logo"></a>
+                        <div class="dropdown">
+                            <i class="fas fa-bars"></i>
+                            <button class="btn-dropdown"> Danh mục sản phẩm</button>
+                            <div class="dropdown__list">
+                                <a href="#" onclick="viewAllProduct('laptop')">Laptop - Macbook</a>
+                                <a href="#" onclick="viewAllProduct('PC')">PC - Máy tính đồng bộ</a>
+                                <a href="#" onclick="viewAllProduct('Monitor')">Màn hình máy tính</a>
+                                <a href="#" onclick="viewAllProduct('components')">Linh kiện máy tính</a>
+                                <a href="#" onclick="viewAllProduct('Spare-part')">Phụ kiện & thiết bị ngoại vi</a>
+                            </div>
                         </div>
-                        <ul id="search-box"></ul>
-                      </div>
-                      <div class="Nav_listchoose">
-                        <ul>
-                            <li class="list_item"><a href="./Promotion.html"><i class="fas fa-receipt"></i>Khuyến mãi</a></li>
-                            <li class="list_item login" id="log-and-reg">
-                                <a href="./SignIn.html"><i class="fas fa-user-circle"></i>Đăng nhập</a>
-                            </li>
-                            <li class="list_item account hide" id="user-section">
-                              <ul>
-                                <li class="list_item dropdown-user"><i class="fas fa-bell"></i></i>Thông báo
-                                    <div class="alert-user">
-                                        <i class="fas fa-search"></i>
-                                        Hiện tại bạn chưa có thông báo mới
-                                    </div>
-                                </li>
-                                <li class="list_item dropdown-user">
-                                    <i class="fas fa-user-circle"></i><p class="username"></p>
-                                    <div class="dropdown-user__list">
-                                      <a href="./Management.html">Thông tin tài khoản</a>
-                                      <a href="./Order.html">Quản lý đơn hàng</a>
-                                      <a href="./EditAccount.html">Thay đổi tài khoản</a>
-                                      <a href="" id="logout-btn"><button class="btn">Đăng xuất</button></a>
-                                    </div>
-                                </li>
-                              </ul>
-                            </li>
-                            <li class="list_item "><a href="./Cart.html">
-                                <i class="fas fa-shopping-cart"></i>
-                                <div class="">Giỏ hàng</div></a>
-                            </li>
-                        </ul>
-                      </div>
-                  </div>
-                  <div id="Navbar">           
-                    <a href="./index.html"><img src="./assets/img/logo/Logo_Mystery_Light.svg" alt=""class="Nav_logo"></a>
-                    <div class="dropdown">
-                        <i class="fas fa-bars"></i>
-                        <button class="btn-dropdown"> Danh mục sản phẩm</button>
-                        <div class="dropdown__list">
-                          <a href="#" onclick="viewAllProduct('laptop')">Laptop - Macbook</a>
-                          <a href="#" onclick="viewAllProduct('PC')">PC - Máy tính đồng bộ</a>
-                          <a href="#" onclick="viewAllProduct('Monitor')">Màn hình máy tính</a>
-                          <a href="#" onclick="viewAllProduct('components')">Linh kiện máy tính</a>
-                          <a href="#" onclick="viewAllProduct('Spare-part')">Phụ kiện & thiết bị ngoại vi</a>
+                        <div class="Nav_Search">
+                            <div class="Search-wrapper">
+                                <input type="text" placeholder="Nhập từ khóa cần tìm" id="search-input">
+                                <button id="search-btn"><i class="fas fa-search"></i></button>
+                            </div>
+                            <ul id="search-box"></ul>
                         </div>
-                    </div>                                              
-                    <div class="Nav_Search">
-                      <div class="Search-wrapper">
-                        <input type="text" placeholder="Nhập từ khóa cần tìm" id="search-input1">
-                        <button id="search-btn1"><i class="fas fa-search"></i></button>
-                      </div>
-                      <ul id="search-box1"></ul>
-                    </div>
-                    <div class="Nav_listchoose">
-                      <ul>
-                          <li class="list_item"><a href="./Promotion.html"><i class="fas fa-receipt"></i>Khuyến mãi</a></li>
-                          <li class="list_item login" id="log-and-reg1">
-                              <a href="./SignIn.html"><i class="fas fa-user-circle"></i>Đăng nhập</a>
-                          </li>
-                          <li class="list_item account hide" id="user-section1">
+                        <div class="Nav_listchoose">
                             <ul>
-                              <li class="list_item dropdown-user"><i class="fas fa-bell"></i></i>Thông báo
-                                  <div class="alert-user">
-                                      <i class="fas fa-search"></i>
-                                      Hiện tại bạn chưa có thông báo mới
-                                  </div>
-                              </li>
-                              <li class="list_item dropdown-user">
-                                  <i class="fas fa-user-circle"></i><p class="username1"></p>
-                                  <div class="dropdown-user__list">
-                                      <a href="./Management.html">Thông tin tài khoản</a>
-                                      <a href="./Order.html">Quản lý đơn hàng</a>
-                                      <a href="./EditAccount.html">Thay đổi tài khoản</a>
-                                      <a href="" id="logout-btn"><button class="btn">Đăng xuất</button></a>
-                                  </div>
-                              </li>
+                                <li class="list_item"><a href="./Promotion.html"><i class="fas fa-receipt"></i>Khuyến
+                                        mãi</a></li>
+                                <li class="list_item login" id="log-and-reg">
+                                    <a href="./SignIn.html"><i class="fas fa-user-circle"></i>Đăng nhập</a>
+                                </li>
+                                <li class="list_item account hide" id="user-section">
+                                    <ul>
+                                        <li class="list_item dropdown-user"><i class="fas fa-bell"></i></i>Thông báo
+                                            <div class="alert-user">
+                                                <i class="fas fa-search"></i>
+                                                Hiện tại bạn chưa có thông báo mới
+                                            </div>
+                                        </li>
+                                        <li class="list_item dropdown-user">
+                                            <i class="fas fa-user-circle"></i>
+                                            <p class="username"></p>
+                                            <div class="dropdown-user__list">
+                                                <a href="./Management.html">Thông tin tài khoản</a>
+                                                <a href="./Order.html">Quản lý đơn hàng</a>
+                                                <a href="./EditAccount.html">Thay đổi tài khoản</a>
+                                                <a href="" id="logout-btn"><button class="btn">Đăng xuất</button></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="list_item "><a href="./Cart.html">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <div class="">Giỏ hàng</div>
+                                    </a>
+                                </li>
                             </ul>
-                          </li>
-                          <li class="list_item "><a href="./Cart.html">
-                              <i class="fas fa-shopping-cart"></i>
-                              <div class="">Giỏ hàng</div></a>
-                          </li>
-                      </ul>
+                        </div>
                     </div>
-                  </div>
+                    <div id="Navbar">
+                        <a href="./index.html"><img src="./assets/img/logo/Logo_Mystery_Light.svg" alt=""
+                                class="Nav_logo"></a>
+                        <div class="dropdown">
+                            <i class="fas fa-bars"></i>
+                            <button class="btn-dropdown"> Danh mục sản phẩm</button>
+                            <div class="dropdown__list">
+                                <a href="#" onclick="viewAllProduct('laptop')">Laptop - Macbook</a>
+                                <a href="#" onclick="viewAllProduct('PC')">PC - Máy tính đồng bộ</a>
+                                <a href="#" onclick="viewAllProduct('Monitor')">Màn hình máy tính</a>
+                                <a href="#" onclick="viewAllProduct('components')">Linh kiện máy tính</a>
+                                <a href="#" onclick="viewAllProduct('Spare-part')">Phụ kiện & thiết bị ngoại vi</a>
+                            </div>
+                        </div>
+                        <div class="Nav_Search">
+                            <div class="Search-wrapper">
+                                <input type="text" placeholder="Nhập từ khóa cần tìm" id="search-input1">
+                                <button id="search-btn1"><i class="fas fa-search"></i></button>
+                            </div>
+                            <ul id="search-box1"></ul>
+                        </div>
+                        <div class="Nav_listchoose">
+                            <ul>
+                                <li class="list_item"><a href="./Promotion.html"><i class="fas fa-receipt"></i>Khuyến
+                                        mãi</a></li>
+                                <li class="list_item login" id="log-and-reg1">
+                                    <a href="./SignIn.html"><i class="fas fa-user-circle"></i>Đăng nhập</a>
+                                </li>
+                                <li class="list_item account hide" id="user-section1">
+                                    <ul>
+                                        <li class="list_item dropdown-user"><i class="fas fa-bell"></i></i>Thông báo
+                                            <div class="alert-user">
+                                                <i class="fas fa-search"></i>
+                                                Hiện tại bạn chưa có thông báo mới
+                                            </div>
+                                        </li>
+                                        <li class="list_item dropdown-user">
+                                            <i class="fas fa-user-circle"></i>
+                                            <p class="username1"></p>
+                                            <div class="dropdown-user__list">
+                                                <a href="./Management.html">Thông tin tài khoản</a>
+                                                <a href="./Order.html">Quản lý đơn hàng</a>
+                                                <a href="./EditAccount.html">Thay đổi tài khoản</a>
+                                                <a href="" id="logout-btn"><button class="btn">Đăng xuất</button></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="list_item "><a href="./Cart.html">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <div class="">Giỏ hàng</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </nav>
-            <div class="interactive-active">
-                <div class="active-socials">
-                    <div class="active-social tel">
-                        <i class="fas fa-phone"></i>
+                <div class="interactive-active">
+                    <div class="active-socials">
+                        <div class="active-social tel">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="active-social email">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="active-social address"><i class="fas fa-map-marker-alt "></i></div>
+                        <div class="active-social face"><i class="fab fa-facebook-f "></i></div>
                     </div>
-                    <div class="active-social email">
-                        <i class="fas fa-envelope"></i>
+                    <div id="backToTop">
+                        <a href="#"><i class="fas fa-arrow-up"></i></a>
                     </div>
-                    <div class="active-social address"><i class="fas fa-map-marker-alt "></i></div>
-                    <div class="active-social face"><i class="fab fa-facebook-f "></i></div>
+                    <div class="active-chat">
+                        <i class="fas fa-comment-alt"></i>
+                        <p>Chat mua hàng trực tuyến từ 8h - 24h</p>
+                    </div>
+
+                    <div class="active-alert">
+
+                    </div>
                 </div>
-                <div id="backToTop">
-                  <a href="#"><i class="fas fa-arrow-up"></i></a>
-                </div>
-                <div class="active-chat">
-                  <i class="fas fa-comment-alt"></i>
-                  <p>Chat mua hàng trực tuyến từ 8h - 24h</p>
-                </div>
-    
-                <div class="active-alert">
-                  
-                </div>
-            </div>
-          </header>
-          
+            </header>
+
         </div>
         <section class="body">
             <div class="breadcrumb">
-                    <a href="/index.html">Trang chủ</a>
-                    <i class="fas fa-chevron-right"></i>
-                    <a href="#">Thông tin cá nhân</a>
+                <a href="/index.html">Trang chủ</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="#">Thông tin cá nhân</a>
             </div>
             <div class="body-wrapper">
                 <div class="col-1">
@@ -210,7 +220,7 @@
                         <form method="#" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="name">Họ và tên :</label>
-                                <input type="text" name="name" id="name"/>
+                                <input type="text" name="name" id="name" />
                             </div>
                             <div class="form-group">
                                 <label for="address">Địa chỉ :</label>
@@ -241,7 +251,7 @@
                             <div class="form-group">
                                 <label for="birth">Ngày sinh: </label>
                                 <input type="date" name="birth" id="birth" />
-                             </div>
+                            </div>
                             <div class="form-submit ">
                                 <input type="submit" value="Cập nhật" class="submit btn" name="submit" id="submit" />
                             </div>
@@ -299,7 +309,7 @@
                                 <i class="fab fa-youtube"></i>
                                 <i class="fab fa-instagram-square"></i>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="contact">
@@ -365,17 +375,19 @@
                     <div class="investor-heading">Các nhà đầu tư</div>
                     <div class="investors">
                         <div class="investor">
-                            <img src="../../img/logo/phonvu-logo.jpg" alt="" >
+                            <img src="../../img/logo/phonvu-logo.jpg" alt="">
                         </div>
                         <div class="investor">
-                            <img src="../../img/logo/hanoicomputer-logo.jpg" alt="" >
+                            <img src="../../img/logo/hanoicomputer-logo.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="mystery-address">
                     <p>© 2021 Công Ty Cổ Phần Thương Mại - Dịch Vụ Mystery</p>
-                    <p>Trụ sở chính: Tầng 5, Số 117-119-121 Nguyễn Du, Phường Bến Thành, Quận 1, Thành Phố Hồ Chí Minh </p>
-                    <p>Cơ sở hai: Tầng 11 Minh Long Tower, số 17 Bà Huyện Thanh Quan, Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh</p>
+                    <p>Trụ sở chính: Tầng 5, Số 117-119-121 Nguyễn Du, Phường Bến Thành, Quận 1, Thành Phố Hồ Chí Minh
+                    </p>
+                    <p>Cơ sở hai: Tầng 11 Minh Long Tower, số 17 Bà Huyện Thanh Quan, Phường Võ Thị Sáu, Quận 3, TP. Hồ
+                        Chí Minh</p>
                     <p>Email: info@mystery.com. Điện thoại: 1900 9999</p>
                 </div>
             </div>
@@ -385,8 +397,10 @@
     <script src="./assets/js/nav-onscroll.js"></script>
     <script src="./assets/js/search.js"></script>
     <script>
+        let sectionUserName = JSON.parse(localStorage.getItem('sectionUserName'));
         const username2 = document.querySelector('.username2');
-        username2.innerHTML = `<span class="user-name-wrapper">${userInfo.name}</span>`;
+        username2.innerHTML = `${sectionUserName.fullname}`;
     </script>
-</body>    
+</body>
+
 </html>

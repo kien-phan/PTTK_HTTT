@@ -386,8 +386,9 @@
     <script src="./assets/js/search.js"></script>
     <script src="./assets/js/EditAccount.js"></script>
     <script>
+        let sectionUserName = JSON.parse(localStorage.getItem('sectionUserName'));
         const username2 = document.querySelector('.username2');
-        username2.innerHTML = `<span class="user-name-wrapper">${userInfo.name}</span>`;
+        username2.innerHTML = `${sectionUserName.fullname}`;
     </script>
 </body>    
 </html>

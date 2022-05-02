@@ -24,6 +24,8 @@ function renderOrder() {
         `
     })
     document.querySelector('.order-wrapper').innerHTML = htmls.join('');
+    const username2 = document.querySelector('.username2');
+    username2.innerHTML = `${sectionUserName.fullname}`;
 }
 
 function renderOrderUser(username) {
