@@ -16,8 +16,13 @@ const handleLogin = () => {
                 localStorage.setItem('sectionUserName', JSON.stringify(userList[i]));
                 window.location.replace("./index.html");
             } else if (userList[i].role === 'adminServer') {
-                localStorage.setItem('sectionUserName', JSON.stringify(userList[i]));
-                window.location.replace("./adminServer.html");
+                if (confirm("Chuyển hướng tới AdminSeller?")) {
+                    localStorage.setItem('sectionUserName', JSON.stringify(userList[i]));
+                    window.location.replace("./adminSeller.html");
+                } else {
+                    localStorage.setItem('sectionUserName', JSON.stringify(userList[i]));
+                    window.location.replace("./adminServer.html");
+                }
             } else if (userList[i].role === 'adminSeller') {
                 localStorage.setItem('sectionUserName', JSON.stringify(userList[i]));
                 window.location.replace("./adminSeller.html");
