@@ -1859,77 +1859,13 @@ let userList = [
 ]
 
 let cartList = [
-    {
-        address: "asdasdas",
-        cartItems: [
-            {
-                id: "2",
-                image: "./assets/img/screen/3_MSI_G271.jpeg",
-                info: {
-                    desc: "Nhà sản xuất MSI | Tên sản phẩm : G271 | Phân khúc Gaming | Kích thước 27 inch (69 cm) | Độ phân giải 1920 x 1080 (FHD) | Tần số quét 144Hz | Tấm nền  IPS | Màu sắc : Dark",
-                    producer: "MSI"
-                },
-                price: 6819000,
-                price1: 7399000,
-                quantity: 1,
-                sale_off: 8,
-                title: "Màn hình MSI Optix G271 (27inch/FHD/IPS/144Hz/1ms/250nits/HDMI+DP/FreeSync)",
-                type: "Monitor"
-            }
-        ],
-        date: "15/4/2022",
-        id: "8b7f",
-        paymentMethod: "online-banking",
-        total: 6819000,
-        user: { 
-            email: "quocvi1701@gamil.com",
-            fullname: "Ha Quoc Vi",
-            password: "123456",
-            phoneNumber: "0327148900",
-            role: "user",
-            stat: "enable",
-            username: "user1"
-        },
-        stat: 0
-    }
+
 ]
 
 let invoiceList = [
-    {
-        id: "8b7f",
-        date: "17/6/2022",
-        quantity: 3,
-        total: 30000000,
-        userName: "user0"
-    },
-    {
-        id: "8b7f",
-        date: "17/4/2022",
-        quantity: 3,
-        total: 30000000,
-        userName: "user0"
-    },
 ]
 
 let detailInvoiceList = [
-    {
-        idInvoice: "8b7f",
-        idProduct: "70",
-        quantity: 1,
-        price: 10000000
-    },
-    {
-        idInvoice: "8b7f",
-        idProduct: "69",
-        quantity: 1,
-        price: 10000000
-    },
-    {
-        idInvoice: "8b7f",
-        idProduct: "71",
-        quantity: 1,
-        price: 10000000
-    }
 ]
 
 // ================================ Utilities Function ===========================================

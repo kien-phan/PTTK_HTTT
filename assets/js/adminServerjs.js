@@ -347,6 +347,7 @@ function disableAccount(name) {
 
 function renderRevenue() {
     let invoiceList = JSON.parse(localStorage.getItem('invoiceList'));
+    if (invoiceList.length == 0) return;
     let currentMonth = invoiceList[0].date.split('/')[1];
     let currentYear = invoiceList[0].date.split('/')[2];
     var html = ``
@@ -456,7 +457,7 @@ function countStat1(month, year) {
             count += 1;
         }
     }
-    return count - 1;
+    return count;
 }
 
 function countAmountStat0(month, year) {
@@ -480,7 +481,7 @@ function countAmountStat1(month, year) {
             count += invoiceList[i].quantity;
         }
     }
-    return count - 3;
+    return count;
 }
 
 function countTotalMoney(month, year) {
@@ -491,7 +492,7 @@ function countTotalMoney(month, year) {
             count += invoiceList[i].total;
         }
     }
-    return count - 30000000;
+    return count;
 }
 
 function sortInvoiceList() {

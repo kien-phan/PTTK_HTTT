@@ -1,6 +1,5 @@
 window.onload = () => {
     let sectionUser = JSON.parse(window.localStorage.getItem('sectionUserName'));
-    console.log(sectionUser);
     if (sectionUser.role === 'user') {
         renderOrderUser(sectionUser.username);
     } else {
@@ -11,6 +10,9 @@ window.onload = () => {
 function renderOrder() {
     let orderList = JSON.parse(localStorage.getItem('cartList'));
     let sectionUserName = JSON.parse(localStorage.getItem('sectionUserName'));
+    const username2 = document.querySelector('.username2');
+    username2.innerHTML = `${sectionUserName.fullname}`;
+    console.log(sectionUserName.fullname)
     let htmls = orderList.map(order => {
         return `
         <li class="order__info">
@@ -24,13 +26,15 @@ function renderOrder() {
         `
     })
     document.querySelector('.order-wrapper').innerHTML = htmls.join('');
-    const username2 = document.querySelector('.username2');
-    username2.innerHTML = `${sectionUserName.fullname}`;
+    
 }
 
 function renderOrderUser(username) {
     let orderList = JSON.parse(localStorage.getItem('cartList'));
     let filterList = orderList.filter(order => order.user.username === username);
+    let sectionUserName = JSON.parse(localStorage.getItem('sectionUserName'));
+    const username2 = document.querySelector('.username2');
+    username2.innerHTML = `${sectionUserName.fullname}`;
     let htmls = filterList.map(order => {
         if (order.stat == 0) {
             return `
